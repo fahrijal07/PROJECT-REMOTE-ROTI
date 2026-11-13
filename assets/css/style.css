@@ -58,6 +58,40 @@ body {
   border-color: #0d6efd;
 }
 
+/* Review */
+.star-rating i {
+  font-size: 1.8rem;
+  color: #ccc;
+  cursor: pointer;
+  margin-right: 4px;
+  transition: color .15s, transform .15s;
+}
+
+.star-rating i.active,
+.star-rating i.hover {
+  color: #ffc107;
+}
+
+.star-rating i:hover {
+  transform: scale(1.15);
+}
+
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.review-stars i {
+  color: #ffc107;
+}
+
 /* Footer */
 .footer .copyright a {
   color: #ee5050;

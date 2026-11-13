@@ -25,6 +25,7 @@
 
     <!-- Custom Style -->
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body id="home" class="d-flex flex-column h-100">
@@ -53,6 +54,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="#review">Review</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="#contact">Contact</a>
@@ -252,6 +256,211 @@
             </div>
         </div>
 
+        <!-- Review -->
+        <div id="review" class="container text-center py-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h3 class="fw-bold lh-2 mb-3">CLIENT REVIEWS</h3>
+                    <p class="lead">Bagikan pengalaman Anda bersama kami. Ulasan Anda sangat berarti.</p>
+                </div>
+            </div>
+
+            <div class="row g-5 py-4 text-start">
+                <!-- Form Ulasan -->
+                <div class="col-lg-5">
+                    <div class="card border-0 rounded-4 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">Tulis Ulasan</h5>
+                            <form id="reviewForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="reviewName" class="form-label">Nama</label>
+                                    <input type="text" class="form-control" id="reviewName" maxlength="50" placeholder="Nama Anda" required>
+                                    <div class="invalid-feedback">Nama wajib diisi.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label d-block">Rating</label>
+                                    <div id="starRating" class="star-rating" role="radiogroup" aria-label="Rating bintang">
+                                        <i class="bi bi-star" data-value="1" role="radio" tabindex="0" aria-label="1 bintang"></i>
+                                        <i class="bi bi-star" data-value="2" role="radio" tabindex="0" aria-label="2 bintang"></i>
+                                        <i class="bi bi-star" data-value="3" role="radio" tabindex="0" aria-label="3 bintang"></i>
+                                        <i class="bi bi-star" data-value="4" role="radio" tabindex="0" aria-label="4 bintang"></i>
+                                        <i class="bi bi-star" data-value="5" role="radio" tabindex="0" aria-label="5 bintang"></i>
+                                    </div>
+                                    <input type="hidden" id="reviewRating" value="0">
+                                    <div class="text-danger small mt-1 d-none" id="ratingError">Pilih rating bintang terlebih dahulu.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="reviewMessage" class="form-label">Ulasan</label>
+                                    <textarea class="form-control" id="reviewMessage" rows="4" maxlength="500" placeholder="Ceritakan pengalaman Anda..." required></textarea>
+                                    <div class="invalid-feedback">Ulasan wajib diisi.</div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 w-100">
+                                    <i class="bi bi-send me-2"></i> Kirim Ulasan
+                                </button>
+                                <div id="reviewSuccess" class="alert alert-success mt-3 mb-0 d-none" role="alert">
+                                    Terima kasih! Ulasan Anda berhasil dikirim.
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daftar Ulasan -->
+                <div class="col-lg-7">
+                    <div class="d-flex align-items-center mb-3">
+                        <h5 class="fw-bold mb-0">Ulasan Terbaru</h5>
+                        <span class="ms-auto text-muted small" id="reviewSummary"></span>
+                    </div>
+                    <div id="reviewList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Script Review -->
+        <script>
+        (function () {
+            var STORAGE_KEY = 'dc_reviews';
+            var form = document.getElementById('reviewForm');
+            var nameEl = document.getElementById('reviewName');
+            var msgEl = document.getElementById('reviewMessage');
+            var ratingEl = document.getElementById('reviewRating');
+            var ratingError = document.getElementById('ratingError');
+            var successEl = document.getElementById('reviewSuccess');
+            var listEl = document.getElementById('reviewList');
+            var summaryEl = document.getElementById('reviewSummary');
+            var stars = document.querySelectorAll('#starRating i');
+
+            // ---------- Penyimpanan ulasan ----------
+            function loadReviews() {
+                try {
+                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+                } catch (e) {
+                    return [];
+                }
+            }
+            function saveReviews(data) {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+                } catch (e) {}
+            }
+
+            // ---------- Bintang ----------
+            function paintStars(value, cls) {
+                stars.forEach(function (s) {
+                    var on = Number(s.dataset.value) <= value;
+                    s.classList.toggle(cls, on);
+                    if (cls === 'active') {
+                        s.classList.toggle('bi-star-fill', on);
+                        s.classList.toggle('bi-star', !on);
+                    }
+                });
+            }
+            stars.forEach(function (s) {
+                s.addEventListener('mouseenter', function () {
+                    stars.forEach(function (x) {
+                        x.classList.toggle('hover', Number(x.dataset.value) <= Number(s.dataset.value));
+                    });
+                });
+                s.addEventListener('mouseleave', function () {
+                    stars.forEach(function (x) { x.classList.remove('hover'); });
+                });
+                function pick() {
+                    ratingEl.value = s.dataset.value;
+                    paintStars(Number(s.dataset.value), 'active');
+                    ratingError.classList.add('d-none');
+                }
+                s.addEventListener('click', pick);
+                s.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        pick();
+                    }
+                });
+            });
+
+            // ---------- Tampilan ----------
+            function escapeHtml(str) {
+                var d = document.createElement('div');
+                d.textContent = str;
+                return d.innerHTML;
+            }
+            function starsHtml(n) {
+                var out = '';
+                for (var i = 1; i <= 5; i++) {
+                    out += '<i class="bi ' + (i <= n ? 'bi-star-fill' : 'bi-star') + '"></i> ';
+                }
+                return out;
+            }
+            var colors = ['#0d6efd', '#6f42c1', '#d63384', '#fd7e14', '#198754', '#20c997'];
+
+            function render() {
+                var reviews = loadReviews();
+                if (!reviews.length) {
+                    listEl.innerHTML = '<div class="card border-0 rounded-4 shadow-sm"><div class="card-body p-4 text-center text-muted">Belum ada ulasan. Jadilah yang pertama!</div></div>';
+                    summaryEl.textContent = '';
+                    return;
+                }
+                var total = reviews.reduce(function (a, r) { return a + r.rating; }, 0);
+                summaryEl.textContent = (total / reviews.length).toFixed(1) + ' / 5 dari ' + reviews.length + ' ulasan';
+
+                listEl.innerHTML = reviews.map(function (r, i) {
+                    var initial = escapeHtml(r.name.charAt(0).toUpperCase());
+                    return '<div class="card border-0 rounded-4 shadow-sm mb-3">' +
+                        '<div class="card-body p-4">' +
+                        '<div class="d-flex align-items-center mb-2">' +
+                        '<div class="review-avatar me-3" style="background:' + colors[i % colors.length] + '">' + initial + '</div>' +
+                        '<div><div class="fw-semibold">' + escapeHtml(r.name) + '</div>' +
+                        '<div class="review-stars small">' + starsHtml(r.rating) + '</div></div>' +
+                        '<div class="ms-auto text-muted small">' + escapeHtml(r.date) + '</div>' +
+                        '</div>' +
+                        '<p class="mb-0">' + escapeHtml(r.message) + '</p>' +
+                        '</div></div>';
+                }).join('');
+            }
+
+            // ---------- Submit ----------
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var valid = true;
+
+                [nameEl, msgEl].forEach(function (el) {
+                    if (!el.value.trim()) {
+                        el.classList.add('is-invalid');
+                        valid = false;
+                    } else {
+                        el.classList.remove('is-invalid');
+                    }
+                });
+                if (Number(ratingEl.value) < 1) {
+                    ratingError.classList.remove('d-none');
+                    valid = false;
+                }
+                if (!valid) return;
+
+                var reviews = loadReviews();
+                reviews.unshift({
+                    name: nameEl.value.trim(),
+                    rating: Number(ratingEl.value),
+                    message: msgEl.value.trim(),
+                    date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
+                });
+                saveReviews(reviews);
+                render();
+
+                form.reset();
+                ratingEl.value = 0;
+                paintStars(0, 'active');
+                successEl.classList.remove('d-none');
+                setTimeout(function () { successEl.classList.add('d-none'); }, 4000);
+            });
+
+            render();
+        })();
+        </script>
+
         <!-- Contact -->
         <div id="contact" class="container text-center pt-4 pb-5">
             <div class="row">
@@ -331,6 +540,7 @@
     <!-- Popper and Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
