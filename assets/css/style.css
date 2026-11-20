@@ -76,3 +76,44 @@ body {
 .footer .link a:hover {
   color: #0d6efd;
 }
+
+/* ===== About - Muzakkery ===== */
+.about-img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.bakery-list {
+  list-style: none;
+  padding: 0;
+}
+
+.bakery-list li {
+  margin-bottom: .5rem;
+}
+
+.bakery-list li::before {
+  content: "\1F950";
+  margin-right: .6rem;
+}
+
+.bakery-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #a0642d;
+  border-radius: 100%;
+  background: #f5e6d3;
+}
+
+.about-stat {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #a0642d;
+}
