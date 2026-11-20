@@ -76,3 +76,40 @@ body {
 .footer .link a:hover {
   color: #0d6efd;
 }
+
+/* Menu */
+.menu-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+.modal-bg {
+  background: #f5f2ea;
+}
+
+/* Tombol kembali */
+.btn-roti {
+  color: #fff;
+  background-color: #a0642d;   /* cokelat roti */
+  border: 2px solid #a0642d;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-roti:hover {
+  color: #a0642d;
+  background-color: transparent;
+  border-color: #a0642d;
+}
+
+.btn-roti-kopi {
+  background-color: #6f4e37;
+  border-color: #6f4e37;
+}
+
+.btn-roti-kopi:hover {
+  color: #6f4e37;
+  background-color: transparent;
+}
