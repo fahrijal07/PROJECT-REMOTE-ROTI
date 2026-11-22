@@ -35,7 +35,7 @@
             <!-- Brand -->
             <a class="navbar-brand" href="https://pustakakoding.com">
                 <img src="assets/img/R9.jpg" alt="Bread" width="60" height="60" class="d-inline-block mt--2 me-2">
-                <span class="text-body fs-4 fw-bolder">Bread</span>
+                <span class="text-body fs-4 fw-bolder">Muzakkery</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -47,13 +47,10 @@
                         <a class="nav-link mx-3" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-3" href="#menu">Menu</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link mx-3" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-3" href="#portfolio">Portfolio</a>
+                        <a class="nav-link mx-3" href="#menu">Menu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="#review">Review</a>
@@ -81,190 +78,159 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="flex-shrink-0">
-        <!-- Heroes -->
+<!-- Main Content -->
+<main class="flex-shrink-0">
+    <!-- Heroes -->
+    <section id="home">
+        <div id="homeSlider" class="carousel slide carousel-fade" data-bs-ride="false">
 
-<section id="home">
+            <div class="carousel-inner">
 
-    <div id="homeSlider" class="carousel slide"
-        data-bs-ride="carousel">
+                <!-- SLIDE 1 (Kotak Kiri) -->
+                <div class="carousel-item active">
+                    <div class="home-slide"
+                        style="background-image: linear-gradient(180deg, rgba(34, 18, 10, 0.78) 0%, rgba(45, 24, 14, 0.65) 55%, rgba(28, 14, 8, 0.92) 100%), url('assets/img/R6.jpg');">
+                        <div class="container home-container">
+                            <div class="home-content">
+                                <span class="home-tag">FRESHLY BAKED DAILY</span>
+                                <h1>Bake something warm, one loaf a day.</h1>
+                                <p>
+                                    Dibuat dari ragi alami pilihan dan mentega premium yang dipanggang setiap pagi untuk menemani hangatnya harimu.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#homeSlider"
-                data-bs-slide-to="0" class="active"
-                aria-current="true"></button>
+                <!-- SLIDE 2 (Kotak Tengah) -->
+                <div class="carousel-item">
+                    <div class="home-slide"
+                        style="background-image: linear-gradient(180deg, rgba(34, 18, 10, 0.78) 0%, rgba(45, 24, 14, 0.65) 55%, rgba(28, 14, 8, 0.92) 100%), url('assets/img/R2.jpg');">
+                        <div class="container home-container">
+                            <div class="home-content">
+                                <span class="home-tag">BREAD OF THE MONTH</span>
+                                <h1>Signature Belgian Choco Brioche.</h1>
+                                <p>
+                                    Perpaduan tekstur roti brioche yang super lembut dengan lelehan cokelat hitam Belgia 70% di setiap lapisannya.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <button type="button" data-bs-target="#homeSlider"
-                data-bs-slide-to="1"></button>
+                <!-- SLIDE 3 (Kotak Kanan - Slide Menu Skala Kecil) -->
+                <div class="carousel-item">
+                    <div class="home-slide"
+                        style="background-image: linear-gradient(180deg, rgba(34, 18, 10, 0.82) 0%, rgba(45, 24, 14, 0.72) 55%, rgba(28, 14, 8, 0.94) 100%), url('assets/img/R5.jpg');">
+                        <div class="container home-container">
+                            <div class="home-content">
+                                <span class="home-tag">CURATED BAKERY MENU</span>
+                                <h1>Crafted Pastries &amp; Artisan Breads.</h1>
+                                <p>
+                                    Dari Croissant renyah, Sourdough klasik, hingga Cinnamon Roll karamel—pilih favoritmu langsung dari dapur kami.
+                                </p>
 
-            <button type="button" data-bs-target="#homeSlider"
-                data-bs-slide-to="2"></button>
+                                <!-- Preview Menu Skala Kecil di dalam Slide 3 -->
+                                <div class="slide-mini-menu-list">
+                                    <div class="mini-menu-row">
+                                        <span>Butter Croissant</span>
+                                        <strong>Rp 24.000</strong>
+                                    </div>
+                                    <div class="mini-menu-row">
+                                        <span>Dark Choco Brioche</span>
+                                        <strong>Rp 32.000</strong>
+                                    </div>
+                                    <div class="mini-menu-row">
+                                        <span>Caramel Cinnamon Roll</span>
+                                        <strong>Rp 28.000</strong>
+                                    </div>
+                                </div>
+
+                                <div class="home-buttons">
+                                    <a href="#menu" class="btn-home-primary">
+                                        View Menu <i class="bi bi-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 3 KOTAK NAVIGASI SLIDE (Pengganti Next / Prev) -->
+            <div class="hero-cards-wrapper" id="heroCardsWrapper">
+                
+                <!-- Tombol Reset (Muncul saat mode kotak kecil di pojok kanan bawah) -->
+                <button type="button" class="btn-reset-cards" id="resetCardsBtn" title="Tampilkan semua kotak">
+                    <i class="bi bi-grid-3x2-gap-fill"></i>
+                </button>
+
+                <!-- KOTAK 1 (Kiri -> Buka Slide 1) -->
+                <div class="hero-card card-left" data-slide-index="0" role="button" tabindex="0">
+                    <div class="hero-card-header">
+                        <span class="card-badge"><i class="bi bi-fire"></i></span>
+                        <span class="card-title">Daily Bake</span>
+                    </div>
+                    <div class="hero-card-body">
+                        <div class="stat-bar-item">
+                            <span>Sourdough</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 94%;"></div></div>
+                            <small>94%</small>
+                        </div>
+                        <div class="stat-bar-item">
+                            <span>Brioche</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 88%;"></div></div>
+                            <small>88%</small>
+                        </div>
+                        <div class="stat-bar-item">
+                            <span>Croissant</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 96%;"></div></div>
+                            <small>96%</small>
+                        </div>
+                    </div>
+                    <div class="hero-card-mini-label">01 · Daily Bake</div>
+                </div>
+
+                <!-- KOTAK 2 (Tengah -> Buka Slide 2) -->
+                <div class="hero-card card-center" data-slide-index="1" role="button" tabindex="0">
+                    <span class="card-center-sub">Bread of the month</span>
+                    <div class="gauge-circle">
+                        <span class="gauge-number">100%</span>
+                    </div>
+                    <span class="card-center-caption">Belgian Choco Brioche</span>
+                    <div class="hero-card-mini-label">02 · Signature</div>
+                </div>
+
+                <!-- KOTAK 3 (Kanan -> Buka Slide 3 Menu Skala Kecil) -->
+                <div class="hero-card card-right" data-slide-index="2" role="button" tabindex="0">
+                    <div class="hero-card-header">
+                        <span class="card-badge"><i class="bi bi-cup-hot-fill"></i></span>
+                        <span class="card-title">Menu Preview</span>
+                        <span class="card-tag-mini">Top 3</span>
+                    </div>
+                    <div class="hero-card-body menu-preview-mini">
+                        <div class="preview-item">
+                            <span>• Butter Croissant</span>
+                            <span>24k</span>
+                        </div>
+                        <div class="preview-item">
+                            <span>• Choco Brioche</span>
+                            <span>32k</span>
+                        </div>
+                        <div class="preview-item">
+                            <span>• Cinnamon Roll</span>
+                            <span>28k</span>
+                        </div>
+                    </div>
+                    <div class="hero-card-mini-label">03 · Menu</div>
+                </div>
+
+            </div>
+
         </div>
-
-        <div class="carousel-inner">
-
-            <!-- SLIDE 1 -->
-            <div class="carousel-item active"
-                data-bs-interval="3500">
-
-                <div class="home-slide"
-                    style="background-image: linear-gradient(90deg, rgba(25,13,8,.85), rgba(25,13,8,.15)), url('assets/img/R6.jpg');">
-
-                    <div class="container home-container">
-                        <div class="home-content">
-
-                            <span class="home-tag">
-                              LOREM
-                            </span>
-
-                            <h1>
-                                WHTSUPPPPP
-                            </h1>
-
-                            <p>
-                               LOREM IP
-                            </p>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- SLIDE 2 -->
-            <div class="carousel-item"
-                data-bs-interval="3500">
-
-                <div class="home-slide"
-                    style="background-image: linear-gradient(90deg, rgba(25,13,8,.85), rgba(25,13,8,.15)), url('assets/img/R2.jpg');">
-
-                    <div class="container home-container">
-                        <div class="home-content">
-
-                            <span class="home-tag">
-                                lorem
-                            </span>
-
-                            <h1>
-                               lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h1>
-
-                            <p>
-                                lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- SLIDE 3 -->
-            <div class="carousel-item"
-                data-bs-interval="3500">
-
-                <div class="home-slide"
-                    style="background-image: url('assets/img/R5.jpg');">
-
-                    <div class="container home-container">
-                        <div class="home-content">
-
-                            <span class="home-tag">
-                                lorem
-                            </span>
-
-                            <h1>
-                                lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h1>
-
-                            <p>
-                               lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-
-                            <div class="home-buttons">
-                                <a href="#menu" class="btn-home-primary">
-                                    View Menu
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- Previous -->
-        <button class="carousel-control-prev home-arrow"
-            type="button" data-bs-target="#homeSlider"
-            data-bs-slide="prev">
-
-            <i class="bi bi-chevron-left"></i>
-        </button>
-
-        <!-- Next -->
-        <button class="carousel-control-next home-arrow"
-            type="button" data-bs-target="#homeSlider"
-            data-bs-slide="next">
-
-            <i class="bi bi-chevron-right"></i>
-        </button>
-    </div>
-
-</section>
-
-    
-        <!-- Services -->
-        <div id="menu" class="container text-center py-5">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h3 class="fw-bold lh-2 mb-3">OUR SERVICES</h3>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
-                </div>
-            </div>
-
-            <div class="row py-4">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <div class="card border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-3 p-sm-5">
-                            <div class="feature-icon-1 bg-primary bg-gradient mb-4">
-                                <i class="bi-filetype-html"></i>
-                            </div>
-                            <h3>Web Design</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <div class="card border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-3 p-sm-5">
-                            <div class="feature-icon-1 bg-primary bg-gradient mb-4">
-                                <i class="bi-code-slash"></i>
-                            </div>
-                            <h3>Web Development</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <div class="card border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-3 p-sm-5">
-                            <div class="feature-icon-1 bg-primary bg-gradient mb-4">
-                                <i class="bi-display"></i>
-                            </div>
-                            <h3>Digital Marketing</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </section>
+</main>
 
         <!-- About -->
         <div id="about" class="container text-center py-5">
@@ -945,5 +911,59 @@
     <!-- Popper and Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<<<<<<< HEAD
 
+=======
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const sliderEl = document.getElementById('homeSlider');
+    const cardsWrapper = document.getElementById('heroCardsWrapper');
+    const resetBtn = document.getElementById('resetCardsBtn');
+    const cards = document.querySelectorAll('.hero-card');
+
+    // Inisialisasi Bootstrap Carousel tanpa auto-slide agar dikendalikan penuh oleh 3 kotak
+    const homeCarousel = new bootstrap.Carousel(sliderEl, {
+        interval: false,
+        ride: false
+    });
+
+    function activateSlideFromCard(index) {
+        // 1. Pindah ke slide sesuai kotak yang diklik (0 = kiri, 1 = tengah, 2 = kanan)
+        homeCarousel.to(index);
+
+        // 2. Ubah 3 kotak menjadi mode mini di pojok kanan bawah
+        cardsWrapper.classList.add('docked-bottom-right');
+        sliderEl.classList.add('card-mode-active');
+
+        // 3. Sembunyikan kotak yang sedang aktif, tampilkan 2 kotak lainnya di kanan bawah
+        cards.forEach((card) => {
+            const cardIdx = parseInt(card.getAttribute('data-slide-index'), 10);
+            if (cardIdx === index) {
+                card.classList.add('is-active-slide');
+            } else {
+                card.classList.remove('is-active-slide');
+            }
+        });
+    }
+
+    // Event klik pada masing-masing kotak
+    cards.forEach((card) => {
+        card.addEventListener('click', function () {
+            const targetIndex = parseInt(this.getAttribute('data-slide-index'), 10);
+            activateSlideFromCard(targetIndex);
+        });
+    });
+
+    // Event tombol reset untuk mengembalikan tampilan awal 3 kotak besar
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            cardsWrapper.classList.remove('docked-bottom-right');
+            sliderEl.classList.remove('card-mode-active');
+            cards.forEach((card) => card.classList.remove('is-active-slide'));
+        });
+    }
+});
+</script>
+>>>>>>> radit
 </body>
