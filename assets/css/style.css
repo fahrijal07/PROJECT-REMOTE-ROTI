@@ -77,43 +77,39 @@ body {
   color: #0d6efd;
 }
 
-/* ===== About - Muzakkery ===== */
-.about-img {
+/* Menu */
+.menu-img {
   width: 100%;
-  max-width: 420px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: center;
 }
 
-.bakery-list {
-  list-style: none;
-  padding: 0;
+.modal-bg {
+  background: #f5f2ea;
 }
 
-.bakery-list li {
-  margin-bottom: .5rem;
+/* Tombol kembali */
+.btn-roti {
+  color: #fff;
+  background-color: #a0642d;   /* cokelat roti */
+  border: 2px solid #a0642d;
+  font-weight: 600;
+  transition: all 0.3s;
 }
 
-.bakery-list li::before {
-  content: "\1F950";
-  margin-right: .6rem;
-}
-
-.bakery-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
+.btn-roti:hover {
   color: #a0642d;
-  border-radius: 100%;
-  background: #f5e6d3;
+  background-color: transparent;
+  border-color: #a0642d;
 }
 
-.about-stat {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #a0642d;
+.btn-roti-kopi {
+  background-color: #6f4e37;
+  border-color: #6f4e37;
+}
+
+.btn-roti-kopi:hover {
+  color: #6f4e37;
+  background-color: transparent;
 }

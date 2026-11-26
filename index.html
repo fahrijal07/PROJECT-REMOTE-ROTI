@@ -54,6 +54,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="#Menu">Menu</a>
+                        <a class="nav-link mx-3" href="#Menu">Menu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="#review">Review</a>
@@ -305,7 +306,7 @@
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalRotiMuzakki">
-                                <img src="assets/img/rotiO.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                <img src="assets/img/Roti/rotiO.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
                             <p class="fw-semibold">Roti Muzakki- Roti coffe</p>
@@ -324,7 +325,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/rotiO.jpg" alt="Roti Muzakki" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/Roti/rotiO.jpg" alt="Roti Muzakki" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                                         <div class="col-lg-6 text-start">
@@ -356,7 +357,7 @@
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalPastry">
-                                <img src="assets/img/pastry.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                <img src="assets/img/Roti/pastry.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
                             <p class="fw-semibold">Pastry - Puff Pastry Berry</p>
@@ -377,7 +378,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/pastry.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/Roti/pastry.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                         <div class="col-lg-6 text-start">
@@ -407,7 +408,7 @@
                     <div class="card-body p-4 pb-0">
                         <div class="mb-3">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#modalDessert">
-                                <img src="assets/img/Dessert.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                <img src="assets/img/Roti/Dessert.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                             </a>
                         </div>
                         <p class="fw-semibold">Dessert Box - Strawberry Cake Box </p>
@@ -415,152 +416,6 @@
                 </div>
             </div>
 
-        <!-- Review -->
-        
-        <!-- Script Review -->
-        <script>
-        (function () {
-            var STORAGE_KEY = 'dc_reviews';
-            var form = document.getElementById('reviewForm');
-            var nameEl = document.getElementById('reviewName');
-            var msgEl = document.getElementById('reviewMessage');
-            var ratingEl = document.getElementById('reviewRating');
-            var ratingError = document.getElementById('ratingError');
-            var successEl = document.getElementById('reviewSuccess');
-            var listEl = document.getElementById('reviewList');
-            var summaryEl = document.getElementById('reviewSummary');
-            var stars = document.querySelectorAll('#starRating i');
-
-            // ---------- Penyimpanan ulasan ----------
-            function loadReviews() {
-                try {
-                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-                } catch (e) {
-                    return [];
-                }
-            }
-            function saveReviews(data) {
-                try {
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-                } catch (e) {}
-            }
-
-            // ---------- Bintang ----------
-            function paintStars(value, cls) {
-                stars.forEach(function (s) {
-                    var on = Number(s.dataset.value) <= value;
-                    s.classList.toggle(cls, on);
-                    if (cls === 'active') {
-                        s.classList.toggle('bi-star-fill', on);
-                        s.classList.toggle('bi-star', !on);
-                    }
-                });
-            }
-            stars.forEach(function (s) {
-                s.addEventListener('mouseenter', function () {
-                    stars.forEach(function (x) {
-                        x.classList.toggle('hover', Number(x.dataset.value) <= Number(s.dataset.value));
-                    });
-                });
-                s.addEventListener('mouseleave', function () {
-                    stars.forEach(function (x) { x.classList.remove('hover'); });
-                });
-                function pick() {
-                    ratingEl.value = s.dataset.value;
-                    paintStars(Number(s.dataset.value), 'active');
-                    ratingError.classList.add('d-none');
-                }
-                s.addEventListener('click', pick);
-                s.addEventListener('keydown', function (e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        pick();
-                    }
-                });
-            });
-
-            // ---------- Tampilan ----------
-            function escapeHtml(str) {
-                var d = document.createElement('div');
-                d.textContent = str;
-                return d.innerHTML;
-            }
-            function starsHtml(n) {
-                var out = '';
-                for (var i = 1; i <= 5; i++) {
-                    out += '<i class="bi ' + (i <= n ? 'bi-star-fill' : 'bi-star') + '"></i> ';
-                }
-                return out;
-            }
-            var colors = ['#0d6efd', '#6f42c1', '#d63384', '#fd7e14', '#198754', '#20c997'];
-
-            function render() {
-                var reviews = loadReviews();
-                if (!reviews.length) {
-                    listEl.innerHTML = '<div class="card border-0 rounded-4 shadow-sm"><div class="card-body p-4 text-center text-muted">Belum ada ulasan. Jadilah yang pertama!</div></div>';
-                    summaryEl.textContent = '';
-                    return;
-                }
-                var total = reviews.reduce(function (a, r) { return a + r.rating; }, 0);
-                summaryEl.textContent = (total / reviews.length).toFixed(1) + ' / 5 dari ' + reviews.length + ' ulasan';
-
-                listEl.innerHTML = reviews.map(function (r, i) {
-                    var initial = escapeHtml(r.name.charAt(0).toUpperCase());
-                    return '<div class="card border-0 rounded-4 shadow-sm mb-3">' +
-                        '<div class="card-body p-4">' +
-                        '<div class="d-flex align-items-center mb-2">' +
-                        '<div class="review-avatar me-3" style="background:' + colors[i % colors.length] + '">' + initial + '</div>' +
-                        '<div><div class="fw-semibold">' + escapeHtml(r.name) + '</div>' +
-                        '<div class="review-stars small">' + starsHtml(r.rating) + '</div></div>' +
-                        '<div class="ms-auto text-muted small">' + escapeHtml(r.date) + '</div>' +
-                        '</div>' +
-                        '<p class="mb-0">' + escapeHtml(r.message) + '</p>' +
-                        '</div></div>';
-                }).join('');
-            }
-
-            // ---------- Submit ----------
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                var valid = true;
-
-                [nameEl, msgEl].forEach(function (el) {
-                    if (!el.value.trim()) {
-                        el.classList.add('is-invalid');
-                        valid = false;
-                    } else {
-                        el.classList.remove('is-invalid');
-                    }
-                });
-                if (Number(ratingEl.value) < 1) {
-                    ratingError.classList.remove('d-none');
-                    valid = false;
-                }
-                if (!valid) return;
-
-                var reviews = loadReviews();
-                reviews.unshift({
-                    name: nameEl.value.trim(),
-                    rating: Number(ratingEl.value),
-                    message: msgEl.value.trim(),
-                    date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
-                });
-                saveReviews(reviews);
-                render();
-
-                form.reset();
-                ratingEl.value = 0;
-                paintStars(0, 'active');
-                successEl.classList.remove('d-none');
-                setTimeout(function () { successEl.classList.add('d-none'); }, 4000);
-            });
-
-            render();
-        })();
-        </script>
-
-        <!-- Review -->
-        <div id="review" class="container text-center py-5">
 <div class="modal fade" id="modalDessert" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content modal-bg">
@@ -574,7 +429,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/Dessert.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/Roti/Dessert.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                         <div class="col-lg-6 text-start">
@@ -603,7 +458,7 @@
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalLondoncake">
-                                    <img src="assets/img/Londoncake.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                    <img src="assets/img/Roti/Londoncake.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
                             <p class="fw-semibold">Londoncake - Khas Bikini Bottom</p>
@@ -623,7 +478,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/Londoncake.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/Roti/Londoncake.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                         <div class="col-lg-6 text-start">
@@ -653,7 +508,7 @@
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalcromboloni">
-                                    <img src="assets/img/cromboloni.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                    <img src="assets/img/Roti/cromboloni.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
                             <p class="fw-semibold">Cromboloni - Matcha</p>
@@ -673,7 +528,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/cromboloni.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/Roti/cromboloni.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                         <div class="col-lg-6 text-start">
@@ -702,7 +557,7 @@
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modaltiramisu">
-                                    <img src="assets/img/tiramisu.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                    <img src="assets/img/Roti/tiramisu.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
                             <p class="fw-semibold">Tiramisu - Lady Bos</p>
@@ -724,7 +579,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/tiramisu.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/Roti/tiramisu.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                         <div class="col-lg-6 text-start">
