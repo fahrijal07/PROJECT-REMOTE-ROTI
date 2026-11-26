@@ -17,7 +17,7 @@ body {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #212529 !important;
+  color: #70452b !important;
   font-size: 16px;
   font-weight: 600;
   transition: all 0.4s;
@@ -40,7 +40,7 @@ body {
 
 .btn-social-media {
   color: #31316a;
-  background-color: #cdcfdf;
+  background-color: #ffffff;
   border-color: #cdcfdf;
   width: 2rem;
   height: 2rem;
@@ -53,9 +53,43 @@ body {
 }
 
 .btn-social-media:hover {
-  color: #fff;
+  color: #ffffff;
   background-color: #0d6efd;
   border-color: #0d6efd;
+}
+
+/* Review */
+.star-rating i {
+  font-size: 1.8rem;
+  color: #ccc;
+  cursor: pointer;
+  margin-right: 4px;
+  transition: color .15s, transform .15s;
+}
+
+.star-rating i.active,
+.star-rating i.hover {
+  color: #ffc107;
+}
+
+.star-rating i:hover {
+  transform: scale(1.15);
+}
+
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.review-stars i {
+  color: #ffc107;
 }
 
 /* Footer */
@@ -77,39 +111,586 @@ body {
   color: #0d6efd;
 }
 
-/* Menu */
-.menu-img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: center;
+
+/* =================================
+   BREAD HOME - INTERACTIVE 3 CARDS
+================================= */
+
+:root {
+    --dark-brown: #70452b;
+    --coffee-light: #48251b;
+    --espresso: #23120b;
+    --cream: #fff7e8;
+    --caramel: #f1dfc5;
+    --gold: #c9a05d;
 }
 
-.modal-bg {
-  background: #f5f2ea;
+/* Navbar Transparan */
+.bg-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: linear-gradient(
+        to bottom,
+        rgba(25, 13, 8, 0.88),
+        transparent
+    ) !important;
 }
 
-/* Tombol kembali */
-.btn-roti {
+.bg-nav .navbar-brand span {
+    color: var(--cream) !important;
+}
+
+.bg-nav .navbar-nav .nav-link {
+    color: var(--cream) !important;
+}
+
+.bg-nav .navbar-nav .nav-link:hover {
+    color: var(--gold) !important;
+}
+
+/* Hero Container */
+#homeSlider {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--espresso);
+}
+
+.home-slide {
+    min-height: 760px;
+    height: 100vh;
+    max-height: 880px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.5s ease;
+}
+
+/* Hero Content (Diposisikan di tengah atas mirip referensi) */
+.home-container {
+    padding-top: 135px;
+    padding-bottom: 240px;
+    transition: padding 0.4s ease;
+}
+
+.home-content {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--cream);
+    padding: 15px;
+    transition: all 0.45s ease;
+}
+
+/* Saat salah satu kartu diklik, konten slide geser sedikit ke kiri agar seimbang dengan kotak kecil di kanan bawah */
+#homeSlider.card-mode-active .home-content {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+    max-width: 600px;
+}
+
+.home-tag {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.home-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: var(--cream);
+}
+
+.home-content p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #eee2d4;
+    max-width: 520px;
+    margin: 0 auto 24px auto;
+}
+
+#homeSlider.card-mode-active .home-content p {
+    margin-left: 0;
+}
+
+/* Daftar Menu Skala Kecil di dalam Slide 3 */
+.slide-mini-menu-list {
+    background: rgba(35, 18, 11, 0.72);
+    border: 1px solid rgba(201, 160, 93, 0.35);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 14px 20px;
+    margin-bottom: 24px;
+    max-width: 440px;
+}
+
+.mini-menu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    border-bottom: 1px dashed rgba(241, 223, 197, 0.2);
+    font-size: 14px;
+    color: var(--cream);
+}
+
+.mini-menu-row:last-child {
+    border-bottom: none;
+}
+
+.mini-menu-row strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* Buttons */
+.home-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#homeSlider.card-mode-active .home-buttons {
+    justify-content: flex-start;
+}
+
+.btn-home-primary {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: var(--gold);
+    color: var(--espresso);
+    border: 1px solid var(--gold);
+    transition: 0.3s ease;
+}
+
+.btn-home-primary:hover {
+    background: var(--cream);
+    border-color: var(--cream);
+    color: var(--espresso);
+    transform: translateY(-2px);
+}
+
+/* =================================
+   3 KOTAK NAVIGASI (DEFAULT STATE)
+================================= */
+
+.hero-cards-wrapper {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 25;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 22px;
+    width: 92%;
+    max-width: 920px;
+    transition: all 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hero-card {
+    background: rgba(255, 247, 232, 0.95);
+    color: var(--espresso);
+    border-radius: 20px;
+    padding: 18px 20px;
+    cursor: pointer;
+    box-shadow: 0 18px 40px rgba(15, 7, 3, 0.45);
+    border: 1px solid rgba(201, 160, 93, 0.35);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    user-select: none;
+    position: relative;
+}
+
+/* Kotak Kiri & Kanan (Sedikit miring seperti referensi) */
+.hero-card.card-left {
+    width: 265px;
+    height: 175px;
+    transform: rotate(-3deg) translateY(8px);
+}
+
+.hero-card.card-right {
+    width: 265px;
+    height: 175px;
+    transform: rotate(3deg) translateY(8px);
+}
+
+/* Kotak Tengah (Nuansa Coklat Utama lebih menonjol) */
+.hero-card.card-center {
+    width: 285px;
+    height: 205px;
+    background: linear-gradient(145deg, var(--dark-brown), var(--coffee-light));
+    color: var(--cream);
+    border: 1px solid var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.hero-card:hover {
+    transform: translateY(-8px) scale(1.03) rotate(0deg) !important;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
+    border-color: var(--gold);
+}
+
+/* Isi Kotak Kiri & Kanan */
+.hero-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.card-badge {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: var(--dark-brown);
+    color: var(--cream);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--espresso);
+}
+
+.card-tag-mini {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 700;
+    background: var(--caramel);
+    color: var(--dark-brown);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+/* Bar Grafik Mini di Kotak Kiri */
+.stat-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.stat-bar-item span {
+    width: 62px;
+    white-space: nowrap;
+}
+
+.bar-track {
+    flex: 1;
+    height: 6px;
+    background: var(--caramel);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: var(--dark-brown);
+    border-radius: 4px;
+}
+
+/* Isi Kotak Tengah */
+.card-center-sub {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--caramel);
+}
+
+.gauge-circle {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    border: 7px solid rgba(255, 247, 232, 0.2);
+    border-top-color: var(--cream);
+    border-right-color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gauge-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--cream);
+}
+
+.card-center-caption {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+/* Isi Kotak Kanan (Menu Preview) */
+.menu-preview-mini .preview-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.5px;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(112, 69, 43, 0.15);
+    font-weight: 500;
+}
+
+.menu-preview-mini .preview-item:last-child {
+    border-bottom: none;
+}
+
+.hero-card-mini-label,
+.btn-reset-cards {
+    display: none;
+}
+
+/* =================================
+   STATE SAAT SLIDE DIKLIK:
+   2 KOTAK SISA MENGECIL DI POJOK KANAN BAWAH
+================================= */
+
+.hero-cards-wrapper.docked-bottom-right {
+    left: auto;
+    right: 32px;
+    bottom: 28px;
+    transform: none;
+    width: auto;
+    max-width: none;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Sembunyikan kotak yang sedang aktif (slide-nya sedang terbuka) */
+.hero-cards-wrapper.docked-bottom-right .hero-card.is-active-slide {
+    display: none;
+}
+
+/* 2 kotak tersisa mengecil rapi di pojok kanan bawah */
+.hero-cards-wrapper.docked-bottom-right .hero-card {
+    width: 155px;
+    height: 82px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    transform: rotate(0deg) translateY(0) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(35, 18, 11, 0.85);
+    backdrop-filter: blur(8px);
+    color: var(--cream);
+    border: 1px solid rgba(201, 160, 93, 0.5);
+}
+
+.hero-cards-wrapper.docked-bottom-right .hero-card:hover {
+    background: var(--dark-brown);
+    border-color: var(--gold);
+    transform: translateY(-4px) !important;
+}
+
+/* Sembunyikan detail besar saat kotak mengecil, ganti dengan label mini yang jelas */
+.hero-cards-wrapper.docked-bottom-right .hero-card-header,
+.hero-cards-wrapper.docked-bottom-right .hero-card-body,
+.hero-cards-wrapper.docked-bottom-right .card-center-sub,
+.hero-cards-wrapper.docked-bottom-right .gauge-circle,
+.hero-cards-wrapper.docked-bottom-right .card-center-caption {
+    display: none;
+}
+
+.hero-cards-wrapper.docked-bottom-right .hero-card-mini-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--cream);
+}
+
+.hero-cards-wrapper.docked-bottom-right .hero-card-mini-label::after {
+    content: "\F138";
+    font-family: "bootstrap-icons";
+    color: var(--gold);
+    font-size: 13px;
+}
+
+/* Tombol kecil untuk mengembalikan tampilan 3 kotak besar */
+.hero-cards-wrapper.docked-bottom-right .btn-reset-cards {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 160, 93, 0.5);
+    background: rgba(35, 18, 11, 0.85);
+    color: var(--gold);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-cards-wrapper.docked-bottom-right .btn-reset-cards:hover {
+    background: var(--gold);
+    color: var(--espresso);
+}
+
+/* =================================
+   RESPONSIVE (TABLET & MOBILE)
+================================= */
+
+@media (max-width: 991px) {
+    .bg-nav {
+        background: var(--coffee-light) !important;
+    }
+
+    .home-slide {
+        min-height: 720px;
+        height: auto;
+    }
+
+    .hero-cards-wrapper {
+        gap: 12px;
+    }
+
+    .hero-card.card-left,
+    .hero-card.card-right,
+    .hero-card.card-center {
+        width: 210px;
+        height: 165px;
+        padding: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .home-container {
+        padding-top: 110px;
+        padding-bottom: 220px;
+    }
+
+    .hero-cards-wrapper {
+        bottom: 16px;
+        gap: 8px;
+    }
+
+    .hero-card.card-left,
+    .hero-card.card-right,
+    .hero-card.card-center {
+        width: 31%;
+        height: 130px;
+        padding: 10px;
+        transform: none !important;
+    }
+
+    .stat-bar-item,
+    .menu-preview-mini .preview-item {
+        font-size: 9.5px;
+    }
+
+    .gauge-circle {
+        width: 56px;
+        height: 56px;
+        border-width: 4px;
+    }
+
+    .gauge-number {
+        font-size: 16px;
+    }
+
+    .hero-cards-wrapper.docked-bottom-right {
+        right: 16px;
+        bottom: 16px;
+        gap: 8px;
+    }
+
+    .hero-cards-wrapper.docked-bottom-right .hero-card {
+        width: 125px;
+        height: 60px;
+        padding: 8px 10px;
+    }
+}
+
+.btn-social-media1 {
+  color: #31316a;
+  background-color: #ffffff;
+  border-color: #cdcfdf;
+  width: 2rem;
+  height: 2rem;
+  padding: 1.2rem;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.btn-social-media2 {
+  color: #000000;
+  background-color: #ffffff;
+  border-color: #ffe6e6;
+  width: 2rem;
+  height: 2rem;
+  padding: 1.2rem;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.btn-social-media3 {
+    color: #31316a;
+  background-color: #ffffff;
+  border-color: #fffdfd;
+  width: 2rem;
+  height: 2rem;
+  padding: 1.2rem;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.btn-social-media1:hover{
   color: #fff;
-  background-color: #a0642d;   /* cokelat roti */
-  border: 2px solid #a0642d;
-  font-weight: 600;
-  transition: all 0.3s;
+  background-color: #8B4513;
+  border-color: #8B4513;
+}
+ 
+.btn-social-media2:hover{
+  color: #fff;
+  background-color: #ff0000;
+  border-color: #ff0000;
 }
 
-.btn-roti:hover {
-  color: #a0642d;
-  background-color: transparent;
-  border-color: #a0642d;
-}
-
-.btn-roti-kopi {
-  background-color: #6f4e37;
-  border-color: #6f4e37;
-}
-
-.btn-roti-kopi:hover {
-  color: #6f4e37;
-  background-color: transparent;
+.btn-social-media3:hover{
+  color: #fff;
+  background-color: #030202;
+  border-color: #030202;
 }

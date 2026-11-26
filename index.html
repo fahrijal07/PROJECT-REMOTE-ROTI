@@ -47,14 +47,10 @@
                         <a class="nav-link mx-3" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-3" href="#menu">Menu</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link mx-3" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-3" href="#Menu">Menu</a>
-                        <a class="nav-link mx-3" href="#Menu">Menu</a>
+                        <a class="nav-link mx-3" href="#menu">Menu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="#review">Review</a>
@@ -82,143 +78,160 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="flex-shrink-0">
-        <!-- Heroes -->
+<!-- Main Content -->
+<main class="flex-shrink-0">
+    <!-- Heroes -->
+    <section id="home">
+        <div id="homeSlider" class="carousel slide carousel-fade" data-bs-ride="false">
 
-<section id="home">
+            <div class="carousel-inner">
 
-    <div id="homeSlider" class="carousel slide"
-        data-bs-ride="carousel">
-
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#homeSlider"
-                data-bs-slide-to="0" class="active"
-                aria-current="true"></button>
-
-            <button type="button" data-bs-target="#homeSlider"
-                data-bs-slide-to="1"></button>
-
-            <button type="button" data-bs-target="#homeSlider"
-                data-bs-slide-to="2"></button>
-        </div>
-
-        <div class="carousel-inner">
-
-            <!-- SLIDE 1 -->
-            <div class="carousel-item active"
-                data-bs-interval="3500">
-
-                <div class="home-slide"
-                    style="background-image: linear-gradient(90deg, rgba(25,13,8,.85), rgba(25,13,8,.15)), url('assets/img/R6.jpg');">
-
-                    <div class="container home-container">
-                        <div class="home-content">
-
-                            <span class="home-tag">
-                              LOREM
-                            </span>
-
-                            <h1>
-                                WHTSUPPPPP
-                            </h1>
-
-                            <p>
-                               LOREM IP
-                            </p>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- SLIDE 2 -->
-            <div class="carousel-item"
-                data-bs-interval="3500">
-
-                <div class="home-slide"
-                    style="background-image: linear-gradient(90deg, rgba(25,13,8,.85), rgba(25,13,8,.15)), url('assets/img/R2.jpg');">
-
-                    <div class="container home-container">
-                        <div class="home-content">
-
-                            <span class="home-tag">
-                                lorem
-                            </span>
-
-                            <h1>
-                               lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h1>
-
-                            <p>
-                                lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- SLIDE 3 -->
-            <div class="carousel-item"
-                data-bs-interval="3500">
-
-                <div class="home-slide"
-                    style="background-image: url('assets/img/R5.jpg');">
-
-                    <div class="container home-container">
-                        <div class="home-content">
-
-                            <span class="home-tag">
-                                lorem
-                            </span>
-
-                            <h1>
-                                lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </h1>
-
-                            <p>
-                               lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            </p>
-
-                            <div class="home-buttons">
-                                <a href="#menu" class="btn-home-primary">
-                                    View Menu
-                                </a>
+                <!-- SLIDE 1 (Kotak Kiri) -->
+                <div class="carousel-item active">
+                    <div class="home-slide"
+                        style="background-image: linear-gradient(180deg, rgba(34, 18, 10, 0.78) 0%, rgba(45, 24, 14, 0.65) 55%, rgba(28, 14, 8, 0.92) 100%), url('assets/img/R6.jpg');">
+                        <div class="container home-container">
+                            <div class="home-content">
+                                <span class="home-tag">FRESHLY BAKED DAILY</span>
+                                <h1>Bake something warm, one loaf a day.</h1>
+                                <p>
+                                    Dibuat dari ragi alami pilihan dan mentega premium yang dipanggang setiap pagi untuk menemani hangatnya harimu.
+                                </p>
                             </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- SLIDE 2 (Kotak Tengah) -->
+                <div class="carousel-item">
+                    <div class="home-slide"
+                        style="background-image: linear-gradient(180deg, rgba(34, 18, 10, 0.78) 0%, rgba(45, 24, 14, 0.65) 55%, rgba(28, 14, 8, 0.92) 100%), url('assets/img/R2.jpg');">
+                        <div class="container home-container">
+                            <div class="home-content">
+                                <span class="home-tag">BREAD OF THE MONTH</span>
+                                <h1>Signature Belgian Choco Brioche.</h1>
+                                <p>
+                                    Perpaduan tekstur roti brioche yang super lembut dengan lelehan cokelat hitam Belgia 70% di setiap lapisannya.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3 (Kotak Kanan - Slide Menu Skala Kecil) -->
+                <div class="carousel-item">
+                    <div class="home-slide"
+                        style="background-image: linear-gradient(180deg, rgba(34, 18, 10, 0.82) 0%, rgba(45, 24, 14, 0.72) 55%, rgba(28, 14, 8, 0.94) 100%), url('assets/img/R5.jpg');">
+                        <div class="container home-container">
+                            <div class="home-content">
+                                <span class="home-tag">CURATED BAKERY MENU</span>
+                                <h1>Crafted Pastries &amp; Artisan Breads.</h1>
+                                <p>
+                                    Dari Croissant renyah, Sourdough klasik, hingga Cinnamon Roll karamel—pilih favoritmu langsung dari dapur kami.
+                                </p>
+
+                                <!-- Preview Menu Skala Kecil di dalam Slide 3 -->
+                                <div class="slide-mini-menu-list">
+                                    <div class="mini-menu-row">
+                                        <span>Butter Croissant</span>
+                                        <strong>Rp 24.000</strong>
+                                    </div>
+                                    <div class="mini-menu-row">
+                                        <span>Dark Choco Brioche</span>
+                                        <strong>Rp 32.000</strong>
+                                    </div>
+                                    <div class="mini-menu-row">
+                                        <span>Caramel Cinnamon Roll</span>
+                                        <strong>Rp 28.000</strong>
+                                    </div>
+                                </div>
+
+                                <div class="home-buttons">
+                                    <a href="#menu" class="btn-home-primary">
+                                        View Menu <i class="bi bi-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
+
+            </div>
+
+            <!-- 3 KOTAK NAVIGASI SLIDE (Pengganti Next / Prev) -->
+            <div class="hero-cards-wrapper" id="heroCardsWrapper">
+                
+                <!-- Tombol Reset (Muncul saat mode kotak kecil di pojok kanan bawah) -->
+                <button type="button" class="btn-reset-cards" id="resetCardsBtn" title="Tampilkan semua kotak">
+                    <i class="bi bi-grid-3x2-gap-fill"></i>
+                </button>
+
+                <!-- KOTAK 1 (Kiri -> Buka Slide 1) -->
+                <div class="hero-card card-left" data-slide-index="0" role="button" tabindex="0">
+                    <div class="hero-card-header">
+                        <span class="card-badge"><i class="bi bi-fire"></i></span>
+                        <span class="card-title">Daily Bake</span>
+                    </div>
+                    <div class="hero-card-body">
+                        <div class="stat-bar-item">
+                            <span>Sourdough</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 94%;"></div></div>
+                            <small>94%</small>
+                        </div>
+                        <div class="stat-bar-item">
+                            <span>Brioche</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 88%;"></div></div>
+                            <small>88%</small>
+                        </div>
+                        <div class="stat-bar-item">
+                            <span>Croissant</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 96%;"></div></div>
+                            <small>96%</small>
+                        </div>
+                    </div>
+                    <div class="hero-card-mini-label">01 · Daily Bake</div>
+                </div>
+
+                <!-- KOTAK 2 (Tengah -> Buka Slide 2) -->
+                <div class="hero-card card-center" data-slide-index="1" role="button" tabindex="0">
+                    <span class="card-center-sub">Bread of the month</span>
+                    <div class="gauge-circle">
+                        <span class="gauge-number">100%</span>
+                    </div>
+                    <span class="card-center-caption">Belgian Choco Brioche</span>
+                    <div class="hero-card-mini-label">02 · Signature</div>
+                </div>
+
+                <!-- KOTAK 3 (Kanan -> Buka Slide 3 Menu Skala Kecil) -->
+                <div class="hero-card card-right" data-slide-index="2" role="button" tabindex="0">
+                    <div class="hero-card-header">
+                        <span class="card-badge"><i class="bi bi-cup-hot-fill"></i></span>
+                        <span class="card-title">Menu Preview</span>
+                        <span class="card-tag-mini">Top 3</span>
+                    </div>
+                    <div class="hero-card-body menu-preview-mini">
+                        <div class="preview-item">
+                            <span>• Butter Croissant</span>
+                            <span>24k</span>
+                        </div>
+                        <div class="preview-item">
+                            <span>• Choco Brioche</span>
+                            <span>32k</span>
+                        </div>
+                        <div class="preview-item">
+                            <span>• Cinnamon Roll</span>
+                            <span>28k</span>
+                        </div>
+                    </div>
+                    <div class="hero-card-mini-label">03 · Menu</div>
+                </div>
+
             </div>
 
         </div>
-
-
-        <!-- Previous -->
-        <button class="carousel-control-prev home-arrow"
-            type="button" data-bs-target="#homeSlider"
-            data-bs-slide="prev">
-
-            <i class="bi bi-chevron-left"></i>
-        </button>
-
-        <!-- Next -->
-        <button class="carousel-control-next home-arrow"
-            type="button" data-bs-target="#homeSlider"
-            data-bs-slide="next">
-
-            <i class="bi bi-chevron-right"></i>
-        </button>
-    </div>
-
-</section>
+    </section>
+</main>
 
         <!-- About -->
         <div id="about" class="container text-center py-5">
@@ -306,7 +319,7 @@
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalRotiMuzakki">
-                                <img src="assets/img/Roti/rotiO.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                <img src="assets/img/rotiO.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
                             <p class="fw-semibold">Roti Muzakki- Roti coffe</p>
@@ -325,7 +338,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/Roti/rotiO.jpg" alt="Roti Muzakki" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/rotiO.jpg" alt="Roti Muzakki" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                                         <div class="col-lg-6 text-start">
@@ -357,7 +370,7 @@
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalPastry">
-                                <img src="assets/img/Roti/pastry.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                <img src="assets/img/pastry.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
                             <p class="fw-semibold">Pastry - Puff Pastry Berry</p>
@@ -378,7 +391,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/Roti/pastry.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/pastry.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                         <div class="col-lg-6 text-start">
@@ -408,7 +421,7 @@
                     <div class="card-body p-4 pb-0">
                         <div class="mb-3">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#modalDessert">
-                                <img src="assets/img/Roti/Dessert.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                <img src="assets/img/Dessert.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                             </a>
                         </div>
                         <p class="fw-semibold">Dessert Box - Strawberry Cake Box </p>
@@ -429,7 +442,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/Roti/Dessert.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/Dessert.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                         <div class="col-lg-6 text-start">
@@ -458,7 +471,7 @@
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalLondoncake">
-                                    <img src="assets/img/Roti/Londoncake.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                    <img src="assets/img/Londoncake.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
                             <p class="fw-semibold">Londoncake - Khas Bikini Bottom</p>
@@ -478,7 +491,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/Roti/Londoncake.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/Londoncake.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                         <div class="col-lg-6 text-start">
@@ -508,7 +521,7 @@
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalcromboloni">
-                                    <img src="assets/img/Roti/cromboloni.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                    <img src="assets/img/cromboloni.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
                             <p class="fw-semibold">Cromboloni - Matcha</p>
@@ -528,7 +541,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/Roti/cromboloni.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/cromboloni.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                         <div class="col-lg-6 text-start">
@@ -557,7 +570,7 @@
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modaltiramisu">
-                                    <img src="assets/img/Roti/tiramisu.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                    <img src="assets/img/tiramisu.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
                             <p class="fw-semibold">Tiramisu - Lady Bos</p>
@@ -579,7 +592,7 @@
                 <div class="container py-4">
                     <div class="row g-5 align-items-start">
                         <div class="col-lg-6">
-                            <img src="assets/img/Roti/tiramisu.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                            <img src="assets/img/tiramisu.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
 
                         <div class="col-lg-6 text-start">
@@ -603,8 +616,153 @@
         </div>
     </div>
 </div>
-        <!-- Contact -->
-        <div id="contact" class="container text-center pt-4 pb-5">
+
+        <!-- Review -->
+        
+        <!-- Script Review -->
+        <script>
+        (function () {
+            var STORAGE_KEY = 'dc_reviews';
+            var form = document.getElementById('reviewForm');
+            var nameEl = document.getElementById('reviewName');
+            var msgEl = document.getElementById('reviewMessage');
+            var ratingEl = document.getElementById('reviewRating');
+            var ratingError = document.getElementById('ratingError');
+            var successEl = document.getElementById('reviewSuccess');
+            var listEl = document.getElementById('reviewList');
+            var summaryEl = document.getElementById('reviewSummary');
+            var stars = document.querySelectorAll('#starRating i');
+
+            // ---------- Penyimpanan ulasan ----------
+            function loadReviews() {
+                try {
+                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+                } catch (e) {
+                    return [];
+                }
+            }
+            function saveReviews(data) {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+                } catch (e) {}
+            }
+
+            // ---------- Bintang ----------
+            function paintStars(value, cls) {
+                stars.forEach(function (s) {
+                    var on = Number(s.dataset.value) <= value;
+                    s.classList.toggle(cls, on);
+                    if (cls === 'active') {
+                        s.classList.toggle('bi-star-fill', on);
+                        s.classList.toggle('bi-star', !on);
+                    }
+                });
+            }
+            stars.forEach(function (s) {
+                s.addEventListener('mouseenter', function () {
+                    stars.forEach(function (x) {
+                        x.classList.toggle('hover', Number(x.dataset.value) <= Number(s.dataset.value));
+                    });
+                });
+                s.addEventListener('mouseleave', function () {
+                    stars.forEach(function (x) { x.classList.remove('hover'); });
+                });
+                function pick() {
+                    ratingEl.value = s.dataset.value;
+                    paintStars(Number(s.dataset.value), 'active');
+                    ratingError.classList.add('d-none');
+                }
+                s.addEventListener('click', pick);
+                s.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        pick();
+                    }
+                });
+            });
+
+            // ---------- Tampilan ----------
+            function escapeHtml(str) {
+                var d = document.createElement('div');
+                d.textContent = str;
+                return d.innerHTML;
+            }
+            function starsHtml(n) {
+                var out = '';
+                for (var i = 1; i <= 5; i++) {
+                    out += '<i class="bi ' + (i <= n ? 'bi-star-fill' : 'bi-star') + '"></i> ';
+                }
+                return out;
+            }
+            var colors = ['#0d6efd', '#6f42c1', '#d63384', '#fd7e14', '#198754', '#20c997'];
+
+            function render() {
+                var reviews = loadReviews();
+                if (!reviews.length) {
+                    listEl.innerHTML = '<div class="card border-0 rounded-4 shadow-sm"><div class="card-body p-4 text-center text-muted">Belum ada ulasan. Jadilah yang pertama!</div></div>';
+                    summaryEl.textContent = '';
+                    return;
+                }
+                var total = reviews.reduce(function (a, r) { return a + r.rating; }, 0);
+                summaryEl.textContent = (total / reviews.length).toFixed(1) + ' / 5 dari ' + reviews.length + ' ulasan';
+
+                listEl.innerHTML = reviews.map(function (r, i) {
+                    var initial = escapeHtml(r.name.charAt(0).toUpperCase());
+                    return '<div class="card border-0 rounded-4 shadow-sm mb-3">' +
+                        '<div class="card-body p-4">' +
+                        '<div class="d-flex align-items-center mb-2">' +
+                        '<div class="review-avatar me-3" style="background:' + colors[i % colors.length] + '">' + initial + '</div>' +
+                        '<div><div class="fw-semibold">' + escapeHtml(r.name) + '</div>' +
+                        '<div class="review-stars small">' + starsHtml(r.rating) + '</div></div>' +
+                        '<div class="ms-auto text-muted small">' + escapeHtml(r.date) + '</div>' +
+                        '</div>' +
+                        '<p class="mb-0">' + escapeHtml(r.message) + '</p>' +
+                        '</div></div>';
+                }).join('');
+            }
+
+            // ---------- Submit ----------
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var valid = true;
+
+                [nameEl, msgEl].forEach(function (el) {
+                    if (!el.value.trim()) {
+                        el.classList.add('is-invalid');
+                        valid = false;
+                    } else {
+                        el.classList.remove('is-invalid');
+                    }
+                });
+                if (Number(ratingEl.value) < 1) {
+                    ratingError.classList.remove('d-none');
+                    valid = false;
+                }
+                if (!valid) return;
+
+                var reviews = loadReviews();
+                reviews.unshift({
+                    name: nameEl.value.trim(),
+                    rating: Number(ratingEl.value),
+                    message: msgEl.value.trim(),
+                    date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
+                });
+                saveReviews(reviews);
+                render();
+
+                form.reset();
+                ratingEl.value = 0;
+                paintStars(0, 'active');
+                successEl.classList.remove('d-none');
+                setTimeout(function () { successEl.classList.add('d-none'); }, 4000);
+            });
+
+            render();
+        })();
+        </script>
+
+        <!-- Review -->
+        <div id="review" class="container text-center py-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h3 class="fw-bold lh-2 mb-3">CLIENT REVIEWS</h3>
@@ -808,162 +966,173 @@
         })();
         </script>
 
-<div id="contact" class="container text-center pt-4 pb-5"
+
+<!-- Contact Section -->
+
+<div id="contact" class="pt-4 pb-5"
      style="background-color: #F8F1E7;">
 
-    <div class="row">
-        <div class="col-lg-8 mx-auto">
+    <!-- Container untuk menjaga posisi konten -->
+    <div class="container text-center">
 
-            <h3 class="fw-bold mb-3"
-                style="color: #70452B;">
-                CONTACT Muzakerry
-            </h3>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
 
-            <p class="lead" style="color: #795C46;">
-                Freshly baked, made with love.
-                Nikmati berbagai pilihan roti dan pastry
-                lezat dari Muzakkery. Hubungi kami atau kunjungi
-                toko kami untuk mendapatkan roti favoritmu.
-            </p>
+                <h3 class="fw-bold mb-3"
+                    style="color: #70452B;">
+                    CONTACT Muzakerry
+                </h3>
 
+                <p class="lead" style="color: #795C46;">
+                    Freshly baked, made with love.
+                    Nikmati berbagai pilihan roti dan pastry
+                    lezat dari Muzakkery. Hubungi kami atau kunjungi
+                    toko kami untuk mendapatkan roti favoritmu.
+                </p>
+
+            </div>
         </div>
-    </div>
 
-    <div class="row align-items-start text-start g-5 pt-4 pb-5">
+        <div class="row align-items-start text-start g-5 pt-4 pb-5">
 
-        <!-- Google Maps -->
-        <div class="col-lg-7">
+            <!-- Google Maps -->
+            <div class="col-lg-7">
 
-            <iframe
-                src="https://maps.google.com/maps?q=-7.3157136,110.4815608&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                class="rounded-4 shadow-sm"
-                width="100%"
-                height="410"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+                <iframe
+                    src="https://maps.google.com/maps?q=-7.3157136,110.4815608&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                    class="rounded-4 shadow-sm"
+                    width="100%"
+                    height="410"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
 
-            <div class="mt-3">
-                <a href="https://www.google.com/maps/place/Triad+printing/@-7.3157083,110.4789859,1002m/data=!3m1!1e3!4m6!3m5!1s0x2e7a79000e8ad5af:0xe40448ce35cbf741!8m2!3d-7.3157136!4d110.4815608"
-                   target="_blank"
-                   class="btn rounded-pill px-4"
-                   style="background-color: #8B5E3C; color: white;">
+                <div class="mt-3">
+                    <a href="https://www.google.com/maps/place/Triad+printing/@-7.3157083,110.4789859,1002m/data=!3m1!1e3!4m6!3m5!1s0x2e7a79000e8ad5af:0xe40448ce35cbf741!8m2!3d-7.3157136!4d110.4815608"
+                       target="_blank"
+                       class="btn rounded-pill px-4"
+                       style="background-color: #8B5E3C; color: white;">
 
-                    <i class="bi bi-geo-alt"></i>
-                    Open Google Maps
+                        <i class="bi bi-geo-alt"></i>
+                        Open Google Maps
 
-                </a>
+                    </a>
+                </div>
+
             </div>
 
-        </div>
+            <!-- Contact Information -->
+            <div class="col-lg-5">
 
-        <!-- Contact Information -->
-        <div class="col-lg-5">
+                <div class="card h-100 border-0 rounded-4 shadow-sm"
+                     style="background-color: #FFFDF9;">
 
-            <div class="card h-100 border-0 rounded-4 shadow-sm"
-                 style="background-color: #FFFDF9;">
+                    <div class="card-body p-4 pb-0">
 
-                <div class="card-body p-4 pb-0">
+                        <!-- Address -->
+                        <div class="d-flex py-2">
 
-                    <!-- Address -->
-                    <div class="d-flex py-2">
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-geo-alt fs-3"
+                                   style="color: #8B5E3C;"></i>
+                            </div>
 
-                        <div class="flex-shrink-0">
-                            <i class="bi bi-geo-alt fs-3"
-                               style="color: #8B5E3C;"></i>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-1 fw-bold"
+                                    style="color: #70452B;">
+                                    Our Location
+                                </h5>
+
+                                <p style="color: #795C46;">
+                                    Salatiga, Jawa Tengah, Indonesia
+                                </p>
+                            </div>
+
                         </div>
 
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-1 fw-bold"
-                                style="color: #70452B;">
-                                Our Location
-                            </h5>
+                        <hr>
 
-                            <p style="color: #795C46;">
-                                Visit Muzakkery
-                            </p>
+                        <!-- WhatsApp -->
+                        <div class="d-flex py-2">
+
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-whatsapp fs-4"
+                                   style="color: #8B5E3C;"></i>
+                            </div>
+
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-1 fw-bold"
+                                    style="color: #70452B;">
+                                    WhatsApp
+                                </h5>
+
+                                <p style="color: #795C46;">
+                                    +62 812-3456-7890
+                                </p>
+                            </div>
+
                         </div>
 
-                    </div>
+                        <hr>
 
-                    <hr>
+                        <!-- Email -->
+                        <div class="d-flex py-2">
 
-                    <!-- WhatsApp -->
-                    <div class="d-flex py-2">
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-envelope fs-4"
+                                   style="color: #8B5E3C;"></i>
+                            </div>
 
-                        <div class="flex-shrink-0">
-                            <i class="bi bi-whatsapp fs-4"
-                               style="color: #8B5E3C;"></i>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-1 fw-bold"
+                                    style="color: #70452B;">
+                                    Email
+                                </h5>
+
+                                <p style="color: #795C46;">
+                                    muzakkery@gmail.com
+                                </p>
+                            </div>
+
                         </div>
 
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-1 fw-bold"
-                                style="color: #70452B;">
-                                WhatsApp
-                            </h5>
+                        <hr>
 
-                            <p style="color: #795C46;">
-                                Contact us for orders
-                            </p>
-                        </div>
+                        <!-- Working Hours -->
+                        <div class="d-flex py-2">
 
-                    </div>
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-clock fs-4"
+                                   style="color: #8B5E3C;"></i>
+                            </div>
 
-                    <hr>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-1 fw-bold"
+                                    style="color: #70452B;">
+                                    Opening Hours
+                                </h5>
 
-                    <!-- Email -->
-                    <div class="d-flex py-2">
+                                <p style="color: #795C46;">
+                                    Monday - Sunday<br>
+                                    08.00 AM - 09.00 PM
+                                </p>
+                            </div>
 
-                        <div class="flex-shrink-0">
-                            <i class="bi bi-envelope fs-4"
-                               style="color: #8B5E3C;"></i>
-                        </div>
-
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-1 fw-bold"
-                                style="color: #70452B;">
-                                Email
-                            </h5>
-
-                            <p style="color: #795C46;">
-                                muzakkery@gmail.com
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <hr>
-
-                    <!-- Working Hours -->
-                    <div class="d-flex py-2">
-
-                        <div class="flex-shrink-0">
-                            <i class="bi bi-clock fs-4"
-                               style="color: #8B5E3C;"></i>
-                        </div>
-
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-1 fw-bold"
-                                style="color: #70452B;">
-                                Opening Hours
-                            </h5>
-
-                            <p style="color: #795C46;">
-                                Monday - Sunday<br>
-                                08.00 AM - 09.00 PM
-                            </p>
                         </div>
 
                     </div>
 
                 </div>
+
             </div>
+
         </div>
 
     </div>
 </div>
+
 
     <!-- Footer -->
     <footer class="footer mt-auto py-4 bg-white">
