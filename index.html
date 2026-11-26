@@ -50,11 +50,7 @@
                         <a class="nav-link mx-3" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-<<<<<<< HEAD
                         <a class="nav-link mx-3" href="#menu">Menu</a>
-=======
-                        <a class="nav-link mx-3" href="#Menu">Menu</a>
->>>>>>> d106399cffdc1bbba589f16eaeb21d3f635bca1c
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="#review">Review</a>
@@ -432,154 +428,6 @@
                 </div>
             </div>
 
-<<<<<<< HEAD
-        <!-- Review -->
-        
-        <!-- Script Review -->
-        <script>
-        (function () {
-            var STORAGE_KEY = 'dc_reviews';
-            var form = document.getElementById('reviewForm');
-            var nameEl = document.getElementById('reviewName');
-            var msgEl = document.getElementById('reviewMessage');
-            var ratingEl = document.getElementById('reviewRating');
-            var ratingError = document.getElementById('ratingError');
-            var successEl = document.getElementById('reviewSuccess');
-            var listEl = document.getElementById('reviewList');
-            var summaryEl = document.getElementById('reviewSummary');
-            var stars = document.querySelectorAll('#starRating i');
-
-            // ---------- Penyimpanan ulasan ----------
-            function loadReviews() {
-                try {
-                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-                } catch (e) {
-                    return [];
-                }
-            }
-            function saveReviews(data) {
-                try {
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-                } catch (e) {}
-            }
-
-            // ---------- Bintang ----------
-            function paintStars(value, cls) {
-                stars.forEach(function (s) {
-                    var on = Number(s.dataset.value) <= value;
-                    s.classList.toggle(cls, on);
-                    if (cls === 'active') {
-                        s.classList.toggle('bi-star-fill', on);
-                        s.classList.toggle('bi-star', !on);
-                    }
-                });
-            }
-            stars.forEach(function (s) {
-                s.addEventListener('mouseenter', function () {
-                    stars.forEach(function (x) {
-                        x.classList.toggle('hover', Number(x.dataset.value) <= Number(s.dataset.value));
-                    });
-                });
-                s.addEventListener('mouseleave', function () {
-                    stars.forEach(function (x) { x.classList.remove('hover'); });
-                });
-                function pick() {
-                    ratingEl.value = s.dataset.value;
-                    paintStars(Number(s.dataset.value), 'active');
-                    ratingError.classList.add('d-none');
-                }
-                s.addEventListener('click', pick);
-                s.addEventListener('keydown', function (e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        pick();
-                    }
-                });
-            });
-
-            // ---------- Tampilan ----------
-            function escapeHtml(str) {
-                var d = document.createElement('div');
-                d.textContent = str;
-                return d.innerHTML;
-            }
-            function starsHtml(n) {
-                var out = '';
-                for (var i = 1; i <= 5; i++) {
-                    out += '<i class="bi ' + (i <= n ? 'bi-star-fill' : 'bi-star') + '"></i> ';
-                }
-                return out;
-            }
-            var colors = ['#0d6efd', '#6f42c1', '#d63384', '#fd7e14', '#198754', '#20c997'];
-
-            function render() {
-                var reviews = loadReviews();
-                if (!reviews.length) {
-                    listEl.innerHTML = '<div class="card border-0 rounded-4 shadow-sm"><div class="card-body p-4 text-center text-muted">Belum ada ulasan. Jadilah yang pertama!</div></div>';
-                    summaryEl.textContent = '';
-                    return;
-                }
-                var total = reviews.reduce(function (a, r) { return a + r.rating; }, 0);
-                summaryEl.textContent = (total / reviews.length).toFixed(1) + ' / 5 dari ' + reviews.length + ' ulasan';
-
-                listEl.innerHTML = reviews.map(function (r, i) {
-                    var initial = escapeHtml(r.name.charAt(0).toUpperCase());
-                    return '<div class="card border-0 rounded-4 shadow-sm mb-3">' +
-                        '<div class="card-body p-4">' +
-                        '<div class="d-flex align-items-center mb-2">' +
-                        '<div class="review-avatar me-3" style="background:' + colors[i % colors.length] + '">' + initial + '</div>' +
-                        '<div><div class="fw-semibold">' + escapeHtml(r.name) + '</div>' +
-                        '<div class="review-stars small">' + starsHtml(r.rating) + '</div></div>' +
-                        '<div class="ms-auto text-muted small">' + escapeHtml(r.date) + '</div>' +
-                        '</div>' +
-                        '<p class="mb-0">' + escapeHtml(r.message) + '</p>' +
-                        '</div></div>';
-                }).join('');
-            }
-
-            // ---------- Submit ----------
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                var valid = true;
-
-                [nameEl, msgEl].forEach(function (el) {
-                    if (!el.value.trim()) {
-                        el.classList.add('is-invalid');
-                        valid = false;
-                    } else {
-                        el.classList.remove('is-invalid');
-                    }
-                });
-                if (Number(ratingEl.value) < 1) {
-                    ratingError.classList.remove('d-none');
-                    valid = false;
-                }
-                if (!valid) return;
-
-                var reviews = loadReviews();
-                reviews.unshift({
-                    name: nameEl.value.trim(),
-                    rating: Number(ratingEl.value),
-                    message: msgEl.value.trim(),
-                    date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
-                });
-                saveReviews(reviews);
-                render();
-
-                form.reset();
-                ratingEl.value = 0;
-                paintStars(0, 'active');
-                successEl.classList.remove('d-none');
-                setTimeout(function () { successEl.classList.add('d-none'); }, 4000);
-            });
-
-            render();
-        })();
-        </script>
-
-        <!-- Review -->
-        <div id="review" class="container text-center py-5">
-=======
 <div class="modal fade" id="modalDessert" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content modal-bg">
@@ -767,9 +615,153 @@
         </div>
     </div>
 </div>
-        <!-- Contact -->
-        <div id="contact" class="container text-center pt-4 pb-5">
->>>>>>> rekaf
+
+        <!-- Review -->
+        
+        <!-- Script Review -->
+        <script>
+        (function () {
+            var STORAGE_KEY = 'dc_reviews';
+            var form = document.getElementById('reviewForm');
+            var nameEl = document.getElementById('reviewName');
+            var msgEl = document.getElementById('reviewMessage');
+            var ratingEl = document.getElementById('reviewRating');
+            var ratingError = document.getElementById('ratingError');
+            var successEl = document.getElementById('reviewSuccess');
+            var listEl = document.getElementById('reviewList');
+            var summaryEl = document.getElementById('reviewSummary');
+            var stars = document.querySelectorAll('#starRating i');
+
+            // ---------- Penyimpanan ulasan ----------
+            function loadReviews() {
+                try {
+                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+                } catch (e) {
+                    return [];
+                }
+            }
+            function saveReviews(data) {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+                } catch (e) {}
+            }
+
+            // ---------- Bintang ----------
+            function paintStars(value, cls) {
+                stars.forEach(function (s) {
+                    var on = Number(s.dataset.value) <= value;
+                    s.classList.toggle(cls, on);
+                    if (cls === 'active') {
+                        s.classList.toggle('bi-star-fill', on);
+                        s.classList.toggle('bi-star', !on);
+                    }
+                });
+            }
+            stars.forEach(function (s) {
+                s.addEventListener('mouseenter', function () {
+                    stars.forEach(function (x) {
+                        x.classList.toggle('hover', Number(x.dataset.value) <= Number(s.dataset.value));
+                    });
+                });
+                s.addEventListener('mouseleave', function () {
+                    stars.forEach(function (x) { x.classList.remove('hover'); });
+                });
+                function pick() {
+                    ratingEl.value = s.dataset.value;
+                    paintStars(Number(s.dataset.value), 'active');
+                    ratingError.classList.add('d-none');
+                }
+                s.addEventListener('click', pick);
+                s.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        pick();
+                    }
+                });
+            });
+
+            // ---------- Tampilan ----------
+            function escapeHtml(str) {
+                var d = document.createElement('div');
+                d.textContent = str;
+                return d.innerHTML;
+            }
+            function starsHtml(n) {
+                var out = '';
+                for (var i = 1; i <= 5; i++) {
+                    out += '<i class="bi ' + (i <= n ? 'bi-star-fill' : 'bi-star') + '"></i> ';
+                }
+                return out;
+            }
+            var colors = ['#0d6efd', '#6f42c1', '#d63384', '#fd7e14', '#198754', '#20c997'];
+
+            function render() {
+                var reviews = loadReviews();
+                if (!reviews.length) {
+                    listEl.innerHTML = '<div class="card border-0 rounded-4 shadow-sm"><div class="card-body p-4 text-center text-muted">Belum ada ulasan. Jadilah yang pertama!</div></div>';
+                    summaryEl.textContent = '';
+                    return;
+                }
+                var total = reviews.reduce(function (a, r) { return a + r.rating; }, 0);
+                summaryEl.textContent = (total / reviews.length).toFixed(1) + ' / 5 dari ' + reviews.length + ' ulasan';
+
+                listEl.innerHTML = reviews.map(function (r, i) {
+                    var initial = escapeHtml(r.name.charAt(0).toUpperCase());
+                    return '<div class="card border-0 rounded-4 shadow-sm mb-3">' +
+                        '<div class="card-body p-4">' +
+                        '<div class="d-flex align-items-center mb-2">' +
+                        '<div class="review-avatar me-3" style="background:' + colors[i % colors.length] + '">' + initial + '</div>' +
+                        '<div><div class="fw-semibold">' + escapeHtml(r.name) + '</div>' +
+                        '<div class="review-stars small">' + starsHtml(r.rating) + '</div></div>' +
+                        '<div class="ms-auto text-muted small">' + escapeHtml(r.date) + '</div>' +
+                        '</div>' +
+                        '<p class="mb-0">' + escapeHtml(r.message) + '</p>' +
+                        '</div></div>';
+                }).join('');
+            }
+
+            // ---------- Submit ----------
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var valid = true;
+
+                [nameEl, msgEl].forEach(function (el) {
+                    if (!el.value.trim()) {
+                        el.classList.add('is-invalid');
+                        valid = false;
+                    } else {
+                        el.classList.remove('is-invalid');
+                    }
+                });
+                if (Number(ratingEl.value) < 1) {
+                    ratingError.classList.remove('d-none');
+                    valid = false;
+                }
+                if (!valid) return;
+
+                var reviews = loadReviews();
+                reviews.unshift({
+                    name: nameEl.value.trim(),
+                    rating: Number(ratingEl.value),
+                    message: msgEl.value.trim(),
+                    date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
+                });
+                saveReviews(reviews);
+                render();
+
+                form.reset();
+                ratingEl.value = 0;
+                paintStars(0, 'active');
+                successEl.classList.remove('d-none');
+                setTimeout(function () { successEl.classList.add('d-none'); }, 4000);
+            });
+
+            render();
+        })();
+        </script>
+
+        <!-- Review -->
+        <div id="review" class="container text-center py-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h3 class="fw-bold lh-2 mb-3">CLIENT REVIEWS</h3>
@@ -973,162 +965,172 @@
         })();
         </script>
 
-<div id="contact" class="container text-center pt-4 pb-5"
+
+<!-- Contact Section -->
+
+<div id="contact" class="pt-4 pb-5"
      style="background-color: #F8F1E7;">
 
-    <div class="row">
-        <div class="col-lg-8 mx-auto">
+    <!-- Container untuk menjaga posisi konten -->
+    <div class="container text-center">
 
-            <h3 class="fw-bold mb-3"
-                style="color: #70452B;">
-                CONTACT Muzakerry
-            </h3>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
 
-            <p class="lead" style="color: #795C46;">
-                Freshly baked, made with love.
-                Nikmati berbagai pilihan roti dan pastry
-                lezat dari Muzakkery. Hubungi kami atau kunjungi
-                toko kami untuk mendapatkan roti favoritmu.
-            </p>
+                <h3 class="fw-bold mb-3"
+                    style="color: #70452B;">
+                    CONTACT Muzakerry
+                </h3>
 
-        </div>
-    </div>
+                <p class="lead" style="color: #795C46;">
+                    Freshly baked, made with love.
+                    Nikmati berbagai pilihan roti dan pastry
+                    lezat dari Muzakkery. Hubungi kami atau kunjungi
+                    toko kami untuk mendapatkan roti favoritmu.
+                </p>
 
-    <div class="row align-items-start text-start g-5 pt-4 pb-5">
-
-        <!-- Google Maps -->
-        <div class="col-lg-7">
-
-            <iframe
-                src="https://maps.google.com/maps?q=-7.3157136,110.4815608&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                class="rounded-4 shadow-sm"
-                width="100%"
-                height="410"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-
-            <div class="mt-3">
-                <a href="https://www.google.com/maps/place/Triad+printing/@-7.3157083,110.4789859,1002m/data=!3m1!1e3!4m6!3m5!1s0x2e7a79000e8ad5af:0xe40448ce35cbf741!8m2!3d-7.3157136!4d110.4815608"
-                   target="_blank"
-                   class="btn rounded-pill px-4"
-                   style="background-color: #8B5E3C; color: white;">
-
-                    <i class="bi bi-geo-alt"></i>
-                    Open Google Maps
-
-                </a>
             </div>
-
         </div>
 
-        <!-- Contact Information -->
-        <div class="col-lg-5">
+        <div class="row align-items-start text-start g-5 pt-4 pb-5">
 
-            <div class="card h-100 border-0 rounded-4 shadow-sm"
-                 style="background-color: #FFFDF9;">
+            <!-- Google Maps -->
+            <div class="col-lg-7">
 
-                <div class="card-body p-4 pb-0">
+                <iframe
+                    src="https://maps.google.com/maps?q=-7.3157136,110.4815608&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                    class="rounded-4 shadow-sm"
+                    width="100%"
+                    height="410"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
 
-                    <!-- Address -->
-                    <div class="d-flex py-2">
+                <div class="mt-3">
+                    <a href="https://www.google.com/maps/place/Triad+printing/@-7.3157083,110.4789859,1002m/data=!3m1!1e3!4m6!3m5!1s0x2e7a79000e8ad5af:0xe40448ce35cbf741!8m2!3d-7.3157136!4d110.4815608"
+                       target="_blank"
+                       class="btn rounded-pill px-4"
+                       style="background-color: #8B5E3C; color: white;">
 
-                        <div class="flex-shrink-0">
-                            <i class="bi bi-geo-alt fs-3"
-                               style="color: #8B5E3C;"></i>
-                        </div>
+                        <i class="bi bi-geo-alt"></i>
+                        Open Google Maps
 
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-1 fw-bold"
-                                style="color: #70452B;">
-                                Our Location
-                            </h5>
-
-                            <p style="color: #795C46;">
-                                Visit Muzakkery
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <hr>
-
-                    <!-- WhatsApp -->
-                    <div class="d-flex py-2">
-
-                        <div class="flex-shrink-0">
-                            <i class="bi bi-whatsapp fs-4"
-                               style="color: #8B5E3C;"></i>
-                        </div>
-
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-1 fw-bold"
-                                style="color: #70452B;">
-                                WhatsApp
-                            </h5>
-
-                            <p style="color: #795C46;">
-                                Contact us for orders
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <hr>
-
-                    <!-- Email -->
-                    <div class="d-flex py-2">
-
-                        <div class="flex-shrink-0">
-                            <i class="bi bi-envelope fs-4"
-                               style="color: #8B5E3C;"></i>
-                        </div>
-
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-1 fw-bold"
-                                style="color: #70452B;">
-                                Email
-                            </h5>
-
-                            <p style="color: #795C46;">
-                                muzakkery@gmail.com
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <hr>
-
-                    <!-- Working Hours -->
-                    <div class="d-flex py-2">
-
-                        <div class="flex-shrink-0">
-                            <i class="bi bi-clock fs-4"
-                               style="color: #8B5E3C;"></i>
-                        </div>
-
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-1 fw-bold"
-                                style="color: #70452B;">
-                                Opening Hours
-                            </h5>
-
-                            <p style="color: #795C46;">
-                                Monday - Sunday<br>
-                                08.00 AM - 09.00 PM
-                            </p>
-                        </div>
-
-                    </div>
-
+                    </a>
                 </div>
+
             </div>
+
+            <!-- Contact Information -->
+            <div class="col-lg-5">
+
+                <div class="card h-100 border-0 rounded-4 shadow-sm"
+                     style="background-color: #FFFDF9;">
+
+                    <div class="card-body p-4 pb-0">
+
+                        <!-- Address -->
+                        <div class="d-flex py-2">
+
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-geo-alt fs-3"
+                                   style="color: #8B5E3C;"></i>
+                            </div>
+
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-1 fw-bold"
+                                    style="color: #70452B;">
+                                    Our Location
+                                </h5>
+
+                                <p style="color: #795C46;">
+                                    Visit Muzakkery
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <!-- WhatsApp -->
+                        <div class="d-flex py-2">
+
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-whatsapp fs-4"
+                                   style="color: #8B5E3C;"></i>
+                            </div>
+
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-1 fw-bold"
+                                    style="color: #70452B;">
+                                    WhatsApp
+                                </h5>
+
+                                <p style="color: #795C46;">
+                                    Contact us for orders
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <!-- Email -->
+                        <div class="d-flex py-2">
+
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-envelope fs-4"
+                                   style="color: #8B5E3C;"></i>
+                            </div>
+
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-1 fw-bold"
+                                    style="color: #70452B;">
+                                    Email
+                                </h5>
+
+                                <p style="color: #795C46;">
+                                    muzakkery@gmail.com
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <!-- Working Hours -->
+                        <div class="d-flex py-2">
+
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-clock fs-4"
+                                   style="color: #8B5E3C;"></i>
+                            </div>
+
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-1 fw-bold"
+                                    style="color: #70452B;">
+                                    Opening Hours
+                                </h5>
+
+                                <p style="color: #795C46;">
+                                    Monday - Sunday<br>
+                                    08.00 AM - 09.00 PM
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 </div>
+
 
     <!-- Footer -->
     <footer class="footer mt-auto py-4 bg-white">
@@ -1147,59 +1149,4 @@
     <!-- Popper and Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-<<<<<<< HEAD
-
-=======
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const sliderEl = document.getElementById('homeSlider');
-    const cardsWrapper = document.getElementById('heroCardsWrapper');
-    const resetBtn = document.getElementById('resetCardsBtn');
-    const cards = document.querySelectorAll('.hero-card');
-
-    // Inisialisasi Bootstrap Carousel tanpa auto-slide agar dikendalikan penuh oleh 3 kotak
-    const homeCarousel = new bootstrap.Carousel(sliderEl, {
-        interval: false,
-        ride: false
-    });
-
-    function activateSlideFromCard(index) {
-        // 1. Pindah ke slide sesuai kotak yang diklik (0 = kiri, 1 = tengah, 2 = kanan)
-        homeCarousel.to(index);
-
-        // 2. Ubah 3 kotak menjadi mode mini di pojok kanan bawah
-        cardsWrapper.classList.add('docked-bottom-right');
-        sliderEl.classList.add('card-mode-active');
-
-        // 3. Sembunyikan kotak yang sedang aktif, tampilkan 2 kotak lainnya di kanan bawah
-        cards.forEach((card) => {
-            const cardIdx = parseInt(card.getAttribute('data-slide-index'), 10);
-            if (cardIdx === index) {
-                card.classList.add('is-active-slide');
-            } else {
-                card.classList.remove('is-active-slide');
-            }
-        });
-    }
-
-    // Event klik pada masing-masing kotak
-    cards.forEach((card) => {
-        card.addEventListener('click', function () {
-            const targetIndex = parseInt(this.getAttribute('data-slide-index'), 10);
-            activateSlideFromCard(targetIndex);
-        });
-    });
-
-    // Event tombol reset untuk mengembalikan tampilan awal 3 kotak besar
-    if (resetBtn) {
-        resetBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            cardsWrapper.classList.remove('docked-bottom-right');
-            sliderEl.classList.remove('card-mode-active');
-            cards.forEach((card) => card.classList.remove('is-active-slide'));
-        });
-    }
-});
-</script>
->>>>>>> radit
 </body>
