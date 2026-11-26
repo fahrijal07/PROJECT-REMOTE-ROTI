@@ -25,16 +25,17 @@
 
     <!-- Custom Style -->
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body id="home" class="d-flex flex-column h-100">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light py-4 bg-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark py-3 bg-nav">
         <div class="container">
             <!-- Brand -->
             <a class="navbar-brand" href="https://pustakakoding.com">
-                <img src="assets/img/logo.svg" alt="Digital Creative" width="42" height="42" class="d-inline-block mt--2 me-2">
-                <span class="text-body fs-4 fw-bolder">Digital Creative</span>
+                <img src="assets/img/R9.jpg" alt="Bread" width="60" height="60" class="d-inline-block mt--2 me-2">
+                <span class="text-body fs-4 fw-bolder">Muzakkery</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,13 +47,16 @@
                         <a class="nav-link mx-3" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-3" href="#services">Services</a>
+                        <a class="nav-link mx-3" href="#menu">Menu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-3" href="#portfolio">Portfolio</a>
+                        <a class="nav-link mx-3" href="#Menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="#review">Review</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="#contact">Contact</a>
@@ -63,13 +67,13 @@
                     <a href="https://facebook.com/pustaka.koding" target="_blank" class="btn btn-social-media me-3">
                         <i class="bi bi-facebook"></i>
                     </a>
-                    <a href="https://www.instagram.com/pustakakoding/" target="_blank" class="btn btn-social-media me-3">
+                    <a href="https://www.instagram.com/pustakakoding/" target="_blank" class="btn btn-social-media1 me-3">
                         <i class="bi bi-instagram"></i>
                     </a>
-                    <a href="https://www.youtube.com/channel/UCbgv9z5lRwtXX_lUZ5-x8Ew" target="_blank" class="btn btn-social-media me-3">
+                    <a href="https://www.youtube.com/channel/UCbgv9z5lRwtXX_lUZ5-x8Ew" target="_blank" class="btn btn-social-media2 me-3">
                         <i class="bi bi-youtube"></i>
                     </a>
-                    <a href="https://github.com/pustakakoding" target="_blank" class="btn btn-social-media">
+                    <a href="https://github.com/pustakakoding" target="_blank" class="btn btn-social-media3 me-3">
                         <i class="bi bi-github"></i>
                     </a>
                 </div>
@@ -80,66 +84,140 @@
     <!-- Main Content -->
     <main class="flex-shrink-0">
         <!-- Heroes -->
-        <div class="container col-xxl-8 px-4 py-5">
-            <div class="row flex-lg-row-reverse align-items-center g-5">
-                <div class="col-lg-5">
-                    <img src="assets/img/heroes.svg" class="d-block mx-lg-auto img-fluid" alt="Digital Creative" loading="lazy">
-                </div>
-                <div class="col-lg-7">
-                    <h1 class="fw-bold lh-2 mb-4">Creative Digital Agency For Your Business Solutions</h1>
-                    <p class="lead mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                        <a href="https://api.whatsapp.com/send?phone=6281377783334&text=Assalamualaikum.." class="btn btn-primary rounded-pill px-4 py-2"><i class="bi bi-whatsapp me-2"></i> Let's talk with us</a>
-                    </div>
-                </div>
-            </div>
+
+<section id="home">
+
+    <div id="homeSlider" class="carousel slide"
+        data-bs-ride="carousel">
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#homeSlider"
+                data-bs-slide-to="0" class="active"
+                aria-current="true"></button>
+
+            <button type="button" data-bs-target="#homeSlider"
+                data-bs-slide-to="1"></button>
+
+            <button type="button" data-bs-target="#homeSlider"
+                data-bs-slide-to="2"></button>
         </div>
 
-        <!-- Services -->
-        <div id="services" class="container text-center py-5">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h3 class="fw-bold lh-2 mb-3">OUR SERVICES</h3>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+        <div class="carousel-inner">
+
+            <!-- SLIDE 1 -->
+            <div class="carousel-item active"
+                data-bs-interval="3500">
+
+                <div class="home-slide"
+                    style="background-image: linear-gradient(90deg, rgba(25,13,8,.85), rgba(25,13,8,.15)), url('assets/img/R6.jpg');">
+
+                    <div class="container home-container">
+                        <div class="home-content">
+
+                            <span class="home-tag">
+                              LOREM
+                            </span>
+
+                            <h1>
+                                WHTSUPPPPP
+                            </h1>
+
+                            <p>
+                               LOREM IP
+                            </p>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="row py-4">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <div class="card border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-3 p-sm-5">
-                            <div class="feature-icon-1 bg-primary bg-gradient mb-4">
-                                <i class="bi-filetype-html"></i>
-                            </div>
-                            <h3>Web Design</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel-item"
+                data-bs-interval="3500">
+
+                <div class="home-slide"
+                    style="background-image: linear-gradient(90deg, rgba(25,13,8,.85), rgba(25,13,8,.15)), url('assets/img/R2.jpg');">
+
+                    <div class="container home-container">
+                        <div class="home-content">
+
+                            <span class="home-tag">
+                                lorem
+                            </span>
+
+                            <h1>
+                               lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </h1>
+
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <div class="card border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-3 p-sm-5">
-                            <div class="feature-icon-1 bg-primary bg-gradient mb-4">
-                                <i class="bi-code-slash"></i>
-                            </div>
-                            <h3>Web Development</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <div class="card border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-3 p-sm-5">
-                            <div class="feature-icon-1 bg-primary bg-gradient mb-4">
-                                <i class="bi-display"></i>
-                            </div>
-                            <h3>Digital Marketing</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
+
+
+            <!-- SLIDE 3 -->
+            <div class="carousel-item"
+                data-bs-interval="3500">
+
+                <div class="home-slide"
+                    style="background-image: url('assets/img/R5.jpg');">
+
+                    <div class="container home-container">
+                        <div class="home-content">
+
+                            <span class="home-tag">
+                                lorem
+                            </span>
+
+                            <h1>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </h1>
+
+                            <p>
+                               lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            </p>
+
+                            <div class="home-buttons">
+                                <a href="#menu" class="btn-home-primary">
+                                    View Menu
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
+
+
+        <!-- Previous -->
+        <button class="carousel-control-prev home-arrow"
+            type="button" data-bs-target="#homeSlider"
+            data-bs-slide="prev">
+
+            <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <!-- Next -->
+        <button class="carousel-control-next home-arrow"
+            type="button" data-bs-target="#homeSlider"
+            data-bs-slide="next">
+
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </div>
+
+</section>
 
         <!-- About -->
         <div id="about" class="container text-center py-5">
@@ -212,12 +290,12 @@
             </div>
         </div>
 
-        <!-- Portfolio -->
-        <div id="portfolio" class="container text-center py-5">
+        <!-- MENU -->
+        <div id="Menu" class="container text-center py-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h3 class="fw-bold lh-2 mb-3">OUR PORTFOLIO</h3>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+                    <h3 class="fw-bold lh-2 mb-3">OUR MENU</h3>
+                    <p class="lead">Temukan berbagai pilihan dessert lezat dengan visual yang menggugah selera, sehingga memilih favoritmu menjadi lebih mudah dan menyenangkan.</p>
                 </div>
             </div>
 
@@ -226,138 +304,811 @@
                     <div class="card h-100 border-0 rounded-4 shadow-sm">
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-kasir-jasa-cuci-mobil-dan-motor" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-kasir-jasa-cuci-mobil-dan-motor.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalRotiMuzakki">
+                                <img src="assets/img/rotiO.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
-                            <p class="fw-semibold">Aplikasi Kasir Jasa Cuci Mobil dan Motor</p>
+                            <p class="fw-semibold">Roti Muzakki- Roti coffe</p>
                         </div>
+                        <div class="modal fade" id="modalRotiMuzakki" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content modal-bg">
+
+            <div class="modal-header border-0">
+                <button type="button" class="btn btn-roti rounded-pill px-4" data-bs-dismiss="modal">
+                 &larr; Kembali ke Menu
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container py-4">
+                    <div class="row g-5 align-items-start">
+                        <div class="col-lg-6">
+                            <img src="assets/img/rotiO.jpg" alt="Roti Muzakki" class="img-fluid rounded-4 shadow-sm menu-img">
+                        </div>
+
+                                        <div class="col-lg-6 text-start">
+                                            <h2 class="fw-bold">Roti Muzakki</h2>
+                                            <p class="text-muted">Roti dengan aroma kopi</p>
+
+                                            <h5 class="fw-bold mt-4">Filosofi</h5>
+                                            <p>Keanggunan lahir dari kesabaran. Seperti biji kopi pilihan yang disangrai perlahan hingga melepaskan aroma terbaiknya, adonan kami diuli, diistirahatkan, dan dipanggang dengan ketelitian penuh. Setiap potong adalah jeda yang indah di tengah hari yang bergegas.</p>
+
+                                            <h5 class="fw-bold mt-4">Cerita di Balik Roti</h5>
+                                            <p>Berawal dari dapur kecil, saat wangi roti yang baru keluar dari oven berpadu dengan kopi yang baru diseduh. Dari situ muncul keinginan menyatukan keduanya dalam satu gigitan. Setelah berbulan-bulan percobaan, lahirlah roti hangat berkulit renyah dengan aroma kopi yang khas dan krim lumer di tengahnya. Nama Muzakki dipilih sebagai pengingat niat baik: makanan yang bersih, jujur, dan membawa berkah.<P>
+
+                                            <h5 class="fw-bold mt-4">Cita Rasa</h5>
+                                            <p>Tekstur : Kulit tipis dan renyah, isi empuk dan lembut, dengan butter di tengahnya.<P>
+                                            <P>Aroma : Wangi kopi hangat berpadu mentega dan roti yang baru matang, seperti kedai kopi di pagi hari.<P>
+                                            <p>Rasa : Manis yang anggun bertemu pahit kopi yang halus, ditutup gurih mentega yang meninggalkan kesan hangat dan panjang.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <div class="card h-100 border-0 rounded-4 shadow-sm">
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-manajemen-keuangan-pribadi-single-user" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-manajemen-keuangan-pribadi-single-user.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalPastry">
+                                <img src="assets/img/pastry.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
                                 </a>
                             </div>
-                            <p class="fw-semibold">DompetKu - Aplikasi Manajemen Keuangan Pribadi (Single User)</p>
+                            <p class="fw-semibold">Pastry - Puff Pastry Berry</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-manajemen-kas-berbasis-web" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-manajemen-kas-berbasis-web.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Aplikasi Manajemen Kas Berbasis Web</p>
+                <div class="modal fade" id="modalPastry" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content modal-bg"> 
+
+            <div class="modal-header border-0">
+                <button type="button" class="btn btn-roti rounded-pill px-4" data-bs-dismiss="modal">
+                 &larr; Kembali ke Menu
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container py-4">
+                    <div class="row g-5 align-items-start">
+                        <div class="col-lg-6">
+                            <img src="assets/img/pastry.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-kasir-penjualan-pulsa" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-kasir-penjualan-pulsa.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Aplikasi Kasir Penjualan Pulsa</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-pengelolaan-arsip-surat" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-pengelolaan-arsip-surat.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Aplikasi Pengelolaan Arsip Surat</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-sistem-informasi-persediaan-barang-gudang-material" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-sistem-informasi-persediaan-barang-gudang-material.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Sistem Informasi Persediaan Barang Gudang Material</p>
+
+                        <div class="col-lg-6 text-start">
+                            <h2 class="fw-bold">Pastry</h2>
+                            <p class="text-muted">Pastry and berry </p>
+
+                            <h5 class="fw-bold mt-4">Filosofi</h5>
+                            <p>Kesederhanaan yang dikerjakan dengan sabar menghasilkan sesuatu yang istimewa. Adonan dilipat berulang kali hingga tercipta puluhan lapisan tipis yang mengembang indah. Setiap lapisnya membawa ketelatenan dan kehangatan untuk dibagikan.</p>
+
+                            <h5 class="fw-bold mt-4">Cerita di Balik Roti</h5>
+                            <p>Berawal dari sore yang tenang, teh hangat, dan sepiring buah beri segar. Dari situ muncul keinginan memadukannya dengan pastri renyah dan krim vanila lembut. Setelah berbagai percobaan, lahirlah pastri berlapis rapi yang dimahkotai beri dan gula halus tipis.</p>
+                            <h5 class="fw-bold mt-4">Cita Rasa</h5>
+                            <p>Tekstur : Garing, berlapis, dan mudah patah, dengan krim vanila lembut dan beri yang segar di atasnya.
+
+                            <p>Aroma: Mentega panggang yang hangat, berpadu harum stroberi dan vanila.</p>
+
+                            <p>Rasa : Manis ringan krim vanila bertemu asam segar beri, diseimbangkan gurih mentega.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+                <div class="col-lg-4 mb-4">
+                <div class="card h-100 border-0 rounded-4 shadow-sm">
+                    <div class="card-body p-4 pb-0">
+                        <div class="mb-3">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalDessert">
+                                <img src="assets/img/Dessert.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                            </a>
+                        </div>
+                        <p class="fw-semibold">Dessert Box - Strawberry Cake Box </p>
+                    </div>
+                </div>
+            </div>
 
+        <!-- Review -->
+        
+        <!-- Script Review -->
+        <script>
+        (function () {
+            var STORAGE_KEY = 'dc_reviews';
+            var form = document.getElementById('reviewForm');
+            var nameEl = document.getElementById('reviewName');
+            var msgEl = document.getElementById('reviewMessage');
+            var ratingEl = document.getElementById('reviewRating');
+            var ratingError = document.getElementById('ratingError');
+            var successEl = document.getElementById('reviewSuccess');
+            var listEl = document.getElementById('reviewList');
+            var summaryEl = document.getElementById('reviewSummary');
+            var stars = document.querySelectorAll('#starRating i');
+
+            // ---------- Penyimpanan ulasan ----------
+            function loadReviews() {
+                try {
+                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+                } catch (e) {
+                    return [];
+                }
+            }
+            function saveReviews(data) {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+                } catch (e) {}
+            }
+
+            // ---------- Bintang ----------
+            function paintStars(value, cls) {
+                stars.forEach(function (s) {
+                    var on = Number(s.dataset.value) <= value;
+                    s.classList.toggle(cls, on);
+                    if (cls === 'active') {
+                        s.classList.toggle('bi-star-fill', on);
+                        s.classList.toggle('bi-star', !on);
+                    }
+                });
+            }
+            stars.forEach(function (s) {
+                s.addEventListener('mouseenter', function () {
+                    stars.forEach(function (x) {
+                        x.classList.toggle('hover', Number(x.dataset.value) <= Number(s.dataset.value));
+                    });
+                });
+                s.addEventListener('mouseleave', function () {
+                    stars.forEach(function (x) { x.classList.remove('hover'); });
+                });
+                function pick() {
+                    ratingEl.value = s.dataset.value;
+                    paintStars(Number(s.dataset.value), 'active');
+                    ratingError.classList.add('d-none');
+                }
+                s.addEventListener('click', pick);
+                s.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        pick();
+                    }
+                });
+            });
+
+            // ---------- Tampilan ----------
+            function escapeHtml(str) {
+                var d = document.createElement('div');
+                d.textContent = str;
+                return d.innerHTML;
+            }
+            function starsHtml(n) {
+                var out = '';
+                for (var i = 1; i <= 5; i++) {
+                    out += '<i class="bi ' + (i <= n ? 'bi-star-fill' : 'bi-star') + '"></i> ';
+                }
+                return out;
+            }
+            var colors = ['#0d6efd', '#6f42c1', '#d63384', '#fd7e14', '#198754', '#20c997'];
+
+            function render() {
+                var reviews = loadReviews();
+                if (!reviews.length) {
+                    listEl.innerHTML = '<div class="card border-0 rounded-4 shadow-sm"><div class="card-body p-4 text-center text-muted">Belum ada ulasan. Jadilah yang pertama!</div></div>';
+                    summaryEl.textContent = '';
+                    return;
+                }
+                var total = reviews.reduce(function (a, r) { return a + r.rating; }, 0);
+                summaryEl.textContent = (total / reviews.length).toFixed(1) + ' / 5 dari ' + reviews.length + ' ulasan';
+
+                listEl.innerHTML = reviews.map(function (r, i) {
+                    var initial = escapeHtml(r.name.charAt(0).toUpperCase());
+                    return '<div class="card border-0 rounded-4 shadow-sm mb-3">' +
+                        '<div class="card-body p-4">' +
+                        '<div class="d-flex align-items-center mb-2">' +
+                        '<div class="review-avatar me-3" style="background:' + colors[i % colors.length] + '">' + initial + '</div>' +
+                        '<div><div class="fw-semibold">' + escapeHtml(r.name) + '</div>' +
+                        '<div class="review-stars small">' + starsHtml(r.rating) + '</div></div>' +
+                        '<div class="ms-auto text-muted small">' + escapeHtml(r.date) + '</div>' +
+                        '</div>' +
+                        '<p class="mb-0">' + escapeHtml(r.message) + '</p>' +
+                        '</div></div>';
+                }).join('');
+            }
+
+            // ---------- Submit ----------
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var valid = true;
+
+                [nameEl, msgEl].forEach(function (el) {
+                    if (!el.value.trim()) {
+                        el.classList.add('is-invalid');
+                        valid = false;
+                    } else {
+                        el.classList.remove('is-invalid');
+                    }
+                });
+                if (Number(ratingEl.value) < 1) {
+                    ratingError.classList.remove('d-none');
+                    valid = false;
+                }
+                if (!valid) return;
+
+                var reviews = loadReviews();
+                reviews.unshift({
+                    name: nameEl.value.trim(),
+                    rating: Number(ratingEl.value),
+                    message: msgEl.value.trim(),
+                    date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
+                });
+                saveReviews(reviews);
+                render();
+
+                form.reset();
+                ratingEl.value = 0;
+                paintStars(0, 'active');
+                successEl.classList.remove('d-none');
+                setTimeout(function () { successEl.classList.add('d-none'); }, 4000);
+            });
+
+            render();
+        })();
+        </script>
+
+        <!-- Review -->
+        <div id="review" class="container text-center py-5">
+<div class="modal fade" id="modalDessert" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content modal-bg">
+            <div class="modal-header border-0">
+                <button type="button" class="btn btn-roti rounded-pill px-4" data-bs-dismiss="modal">
+                 &larr; Kembali ke Menu
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container py-4">
+                    <div class="row g-5 align-items-start">
+                        <div class="col-lg-6">
+                            <img src="assets/img/Dessert.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                        </div>
+
+                        <div class="col-lg-6 text-start">
+                            <h2 class="fw-bold">Dessert</h2>
+                            <p class="text-muted">Strawberry Cake Box</p>
+
+                            <h5 class="fw-bold mt-4">Filosofi</h5>
+                            <p>Kesegaran terbaik datang dari bahan yang jujur. Stroberi dipilih satu per satu dan disusun rapi bersama krim lembut, agar setiap lapisnya terasa seimbang dan bersih di lidah. Sederhana, manis, dan dibuat dengan hati.</p>
+
+                            <h5 class="fw-bold mt-4">Cerita di Balik Roti</h5>
+                            <p>Berawal dari semangkuk stroberi segar di meja dapur. Dari situ muncul ide menatanya dalam kotak bening, berlapis remah biskuit, krim vanila, dan potongan stroberi yang terlihat dari luar. Setelah beberapa kali percobaan, lahirlah kue yang cantik dipandang dan nyaman dibawa ke mana saja.</p>
+
+                            <h5 class="fw-bold mt-4">Cita Rasa</h5>
+                            <p>Tekstur: Dasar biskuit yang renyah, krim vanila lembut, dan whipped cream ringan, dengan stroberi segar yang juicy.</p>
+                            <p>Aroma :  Harum stroberi segar berpadu vanila dan biskuit panggang.</p>
+                            <p>Rasa : Manis lembut krim bertemu asam segar stroberi, diseimbangkan gurih remah biskuit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 border-0 rounded-4 shadow-sm">
+                        <div class="card-body p-4 pb-0">
+                            <div class="mb-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalLondoncake">
+                                    <img src="assets/img/Londoncake.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                </a>
+                            </div>
+                            <p class="fw-semibold">Londoncake - Khas Bikini Bottom</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modalLondoncake" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content modal-bg">
+            <div class="modal-header border-0">
+                <button type="button" class="btn btn-roti rounded-pill px-4" data-bs-dismiss="modal">
+                 &larr; Kembali ke Menu
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container py-4">
+                    <div class="row g-5 align-items-start">
+                        <div class="col-lg-6">
+                            <img src="assets/img/Londoncake.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                        </div>
+
+                        <div class="col-lg-6 text-start">
+                            <h2 class="fw-bold">Londoncake</h2>
+                            <p class="text-muted">Menu Best Seller Bikini Bottom </p>
+
+                            <h5 class="fw-bold mt-4">Filosofi</h5>
+                            <p>Perpaduan bolu cokelat lembut, dark chocolate ganache yang pekat, dan whipped salted caramel yang manis-gurih menciptakan harmoni rasa. Perbedaan karakter tersebut melambangkan bahwa sesuatu yang bertolak belakang dapat saling melengkapi dan menghasilkan keseimbangan tanpa saling mendominasi.</p>
+
+                            <h5 class="fw-bold mt-4">Cerita di Balik Roti</h5>
+                            <p>Berawal dari semangkuk ganache cokelat yang baru diaduk di dapur kecil. Dari situ muncul ide menyusunnya berlapis-lapis bersama sponge cokelat yang lembap. Setelah berbagai percobaan, lahirlah kue empat lapis dengan glaze mengilap dan serpihan emas di puncaknya, disajikan bersama saus beri yang segar.</p>
+
+                            <h5 class="fw-bold mt-4">Cita Rasa</h5>
+                            <p>Tekstur : Sponge cokelat lembap dan empuk, berlapis ganache halus, dengan glaze mengilap di atasnya.</p>
+                            <p>Aroma : Cokelat hangat yang pekat dan menggoda.</p>
+                            <p>Rasa : Cokelat dalam dan kaya, dengan pahit yang pas, diseimbangkan asam segar saus beri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 border-0 rounded-4 shadow-sm">
+                        <div class="card-body p-4 pb-0">
+                            <div class="mb-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalcromboloni">
+                                    <img src="assets/img/cromboloni.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                </a>
+                            </div>
+                            <p class="fw-semibold">Cromboloni - Matcha</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modalcromboloni" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content modal-bg">
+            <div class="modal-header border-0">
+                <button type="button" class="btn btn-roti rounded-pill px-4" data-bs-dismiss="modal">
+                 &larr; Kembali ke Menu
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container py-4">
+                    <div class="row g-5 align-items-start">
+                        <div class="col-lg-6">
+                            <img src="assets/img/cromboloni.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                        </div>
+
+                        <div class="col-lg-6 text-start">
+                            <h2 class="fw-bold">Cromboloni</h2>
+                            <p class="text-muted">Pastri Berlapis, Matcha Pekat </p>
+
+                            <h5 class="fw-bold mt-4">Filosofi</h5>
+                            <p>Pastry terbaik lahir dari kesabaran. Adonan dilipat dan didiamkan berulang kali hingga membentuk lapisan tipis yang berputar indah, lalu disempurnakan dengan matcha yang dipilih agar rasanya pekat namun tetap lembut.</p>
+
+                            <h5 class="fw-bold mt-4">Cerita di Balik Roti</h5>
+                            <p>Berawal dari kecintaan pada croissant yang renyah dan secangkir teh hijau di pagi hari. Muncul pertanyaan: bagaimana jika keduanya bertemu dalam satu gigitan? Setelah banyak percobaan, lahirlah pastri bulat berlapis spiral, disiram saus matcha dan ditaburi kacang cincang yang garing.</p>
+
+                            <h5 class="fw-bold mt-4">Cita Rasa</h5>
+                            <p>Tekstur : Kulit luar renyah dan berlapis spiral, lembut di dalam, dengan taburan kacang yang garing.</p>
+                            <p>Aroma : Harum mentega panggang berpadu wangi matcha yang segar.</p>
+                            <p>Rasa : Manis gurih dengan sentuhan pahit matcha yang lembut, ditambah gurih renyah kacang.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 border-0 rounded-4 shadow-sm">
+                        <div class="card-body p-4 pb-0">
+                            <div class="mb-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modaltiramisu">
+                                    <img src="assets/img/tiramisu.jpg" alt="Menu" class="card-img-top img-fluid rounded-4 menu-img">
+                                </a>
+                            </div>
+                            <p class="fw-semibold">Tiramisu - Lady Bos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modaltiramisu" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content modal-bg">
+            <div class="modal-header border-0">
+                <button type="button" class="btn btn-roti rounded-pill px-4" data-bs-dismiss="modal">
+                 &larr; Kembali ke Menu
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container py-4">
+                    <div class="row g-5 align-items-start">
+                        <div class="col-lg-6">
+                            <img src="assets/img/tiramisu.jpg" alt="Pastry" class="img-fluid rounded-4 shadow-sm menu-img">
+                        </div>
+
+                        <div class="col-lg-6 text-start">
+                            <h2 class="fw-bold">Tiramisu</h2>
+                            <p class="text-muted">Perpaduan kelembutan krim dan aroma kopi yang elegan, menghadirkan cita rasa istimewa dalam setiap lapisan. </p>
+
+                            <h5 class="fw-bold mt-4">Filosofi</h5>
+                            <p>Kemewahan sejati terletak pada kehalusan. Setiap lapis mascarpone disusun dengan presisi, dipadukan dengan kopi pilihan dan kakao murni, lalu didiamkan hingga seluruh rasanya menyatu dalam harmoni yang utuh. Tidak berlebihan, hanya kesempurnaan yang dikerjakan dengan penuh ketelitian.</p>
+
+                            <h5 class="fw-bold mt-4">Cerita di Balik Roti</h5>
+                            <p>Terinspirasi dari ritual senja: secangkir kopi yang diseduh perlahan, ditemani sesuatu yang manis dan anggun. Dari momen itu lahir tiramisu dalam sajian personal, berlapis krim sehalus sutra, diselimuti kakao, dan dimahkotai buah pilihan serta daun mint segar. Sebuah penutup yang layak dinikmati tanpa tergesa.</p>
+
+                            <h5 class="fw-bold mt-4">Cita Rasa</h5>
+                            <p>Tekstur : Krim mascarpone selembut sutra, ringan namun kaya, berlapis rapi dengan selimut kakao yang sehalus bedak di permukaannya.</p>
+                            <p>Aroma : Kakao pekat berpadu kopi sangrai yang hangat, berlapis dengan harum krim yang lembut.</p>
+                            <p>Rasa : Manis yang elegan bertemu pahit kakao yang bersih. Setiap suapan meleleh perlahan dan meninggalkan jejak kopi yang panjang dan menenangkan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
         <!-- Contact -->
         <div id="contact" class="container text-center pt-4 pb-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h3 class="fw-bold lh-2 mb-3">CONTACT US</h3>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+                    <h3 class="fw-bold lh-2 mb-3">CLIENT REVIEWS</h3>
+                    <p class="lead">Bagikan pengalaman Anda bersama kami. Ulasan Anda sangat berarti.</p>
                 </div>
             </div>
 
-            <div class="row align-items-start text-start g-5 pt-4 pb-5">
-                <div class="col-lg-7">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127101.59148701998!2d105.19743545987781!3d-5.428404621346565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dbcabf21b51f%3A0xdcb06324bff3cb9e!2sBandar%20Lampung%20City%2C%20Lampung!5e0!3m2!1sen!2sid!4v1670074127117!5m2!1sen!2sid" class="rounded-4 shadow-sm" width="100%" height="410" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+            <div class="row g-5 py-4 text-start">
+                <!-- Form Ulasan -->
                 <div class="col-lg-5">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="d-flex py-2">
-                                <div class="flex-shrink-0">
-                                    <i class="bi bi-geo-alt text-primary fs-3"></i>
+                    <div class="card border-0 rounded-4 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">Tulis Ulasan</h5>
+                            <form id="reviewForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="reviewName" class="form-label">Nama</label>
+                                    <input type="text" class="form-control" id="reviewName" maxlength="50" placeholder="Nama Anda" required>
+                                    <div class="invalid-feedback">Nama wajib diisi.</div>
                                 </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="mb-1">Address</h5>
-                                    <p>Bandar Lampung City, Lampung</p>
+
+                                <div class="mb-3">
+                                    <label class="form-label d-block">Rating</label>
+                                    <div id="starRating" class="star-rating" role="radiogroup" aria-label="Rating bintang">
+                                        <i class="bi bi-star" data-value="1" role="radio" tabindex="0" aria-label="1 bintang"></i>
+                                        <i class="bi bi-star" data-value="2" role="radio" tabindex="0" aria-label="2 bintang"></i>
+                                        <i class="bi bi-star" data-value="3" role="radio" tabindex="0" aria-label="3 bintang"></i>
+                                        <i class="bi bi-star" data-value="4" role="radio" tabindex="0" aria-label="4 bintang"></i>
+                                        <i class="bi bi-star" data-value="5" role="radio" tabindex="0" aria-label="5 bintang"></i>
+                                    </div>
+                                    <input type="hidden" id="reviewRating" value="0">
+                                    <div class="text-danger small mt-1 d-none" id="ratingError">Pilih rating bintang terlebih dahulu.</div>
                                 </div>
-                            </div>
-                            <hr class="hr-dotted mt-0">
-                            <div class="d-flex py-2">
-                                <div class="flex-shrink-0">
-                                    <i class="bi bi-whatsapp text-primary fs-4"></i>
+
+                                <div class="mb-3">
+                                    <label for="reviewMessage" class="form-label">Ulasan</label>
+                                    <textarea class="form-control" id="reviewMessage" rows="4" maxlength="500" placeholder="Ceritakan pengalaman Anda..." required></textarea>
+                                    <div class="invalid-feedback">Ulasan wajib diisi.</div>
                                 </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="mb-1">WhatsApp</h5>
-                                    <p>+62 813-7778-3334</p>
+
+                                <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 w-100">
+                                    <i class="bi bi-send me-2"></i> Kirim Ulasan
+                                </button>
+                                <div id="reviewSuccess" class="alert alert-success mt-3 mb-0 d-none" role="alert">
+                                    Terima kasih! Ulasan Anda berhasil dikirim.
                                 </div>
-                            </div>
-                            <hr class="hr-dotted mt-0">
-                            <div class="d-flex py-2">
-                                <div class="flex-shrink-0">
-                                    <i class="bi bi-envelope text-primary fs-4"></i>
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="mb-1">Email</h5>
-                                    <p>pustaka.koding@gmail.com</p>
-                                </div>
-                            </div>
-                            <hr class="hr-dotted mt-0">
-                            <div class="d-flex py-2">
-                                <div class="flex-shrink-0">
-                                    <i class="bi bi-clock text-primary fs-4"></i>
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="mb-1">Working Hours</h5>
-                                    <p>Monday - Saturday, 09.00 AM - 16.00 PM</p>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
+
+                <!-- Daftar Ulasan -->
+                <div class="col-lg-7">
+                    <div class="d-flex align-items-center mb-3">
+                        <h5 class="fw-bold mb-0">Ulasan Terbaru</h5>
+                        <span class="ms-auto text-muted small" id="reviewSummary"></span>
+                    </div>
+                    <div id="reviewList"></div>
+                </div>
             </div>
         </div>
-    </main>
+
+        <!-- Script Review -->
+        <script>
+        (function () {
+            var STORAGE_KEY = 'dc_reviews';
+            var form = document.getElementById('reviewForm');
+            var nameEl = document.getElementById('reviewName');
+            var msgEl = document.getElementById('reviewMessage');
+            var ratingEl = document.getElementById('reviewRating');
+            var ratingError = document.getElementById('ratingError');
+            var successEl = document.getElementById('reviewSuccess');
+            var listEl = document.getElementById('reviewList');
+            var summaryEl = document.getElementById('reviewSummary');
+            var stars = document.querySelectorAll('#starRating i');
+
+            // ---------- Penyimpanan ulasan ----------
+            function loadReviews() {
+                try {
+                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+                } catch (e) {
+                    return [];
+                }
+            }
+            function saveReviews(data) {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+                } catch (e) {}
+            }
+
+            // ---------- Bintang ----------
+            function paintStars(value, cls) {
+                stars.forEach(function (s) {
+                    var on = Number(s.dataset.value) <= value;
+                    s.classList.toggle(cls, on);
+                    if (cls === 'active') {
+                        s.classList.toggle('bi-star-fill', on);
+                        s.classList.toggle('bi-star', !on);
+                    }
+                });
+            }
+            stars.forEach(function (s) {
+                s.addEventListener('mouseenter', function () {
+                    stars.forEach(function (x) {
+                        x.classList.toggle('hover', Number(x.dataset.value) <= Number(s.dataset.value));
+                    });
+                });
+                s.addEventListener('mouseleave', function () {
+                    stars.forEach(function (x) { x.classList.remove('hover'); });
+                });
+                function pick() {
+                    ratingEl.value = s.dataset.value;
+                    paintStars(Number(s.dataset.value), 'active');
+                    ratingError.classList.add('d-none');
+                }
+                s.addEventListener('click', pick);
+                s.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        pick();
+                    }
+                });
+            });
+
+            // ---------- Tampilan ----------
+            function escapeHtml(str) {
+                var d = document.createElement('div');
+                d.textContent = str;
+                return d.innerHTML;
+            }
+            function starsHtml(n) {
+                var out = '';
+                for (var i = 1; i <= 5; i++) {
+                    out += '<i class="bi ' + (i <= n ? 'bi-star-fill' : 'bi-star') + '"></i> ';
+                }
+                return out;
+            }
+            var colors = ['#0d6efd', '#6f42c1', '#d63384', '#fd7e14', '#198754', '#20c997'];
+
+            function render() {
+                var reviews = loadReviews();
+                if (!reviews.length) {
+                    listEl.innerHTML = '<div class="card border-0 rounded-4 shadow-sm"><div class="card-body p-4 text-center text-muted">Belum ada ulasan. Jadilah yang pertama!</div></div>';
+                    summaryEl.textContent = '';
+                    return;
+                }
+                var total = reviews.reduce(function (a, r) { return a + r.rating; }, 0);
+                summaryEl.textContent = (total / reviews.length).toFixed(1) + ' / 5 dari ' + reviews.length + ' ulasan';
+
+                listEl.innerHTML = reviews.map(function (r, i) {
+                    var initial = escapeHtml(r.name.charAt(0).toUpperCase());
+                    return '<div class="card border-0 rounded-4 shadow-sm mb-3">' +
+                        '<div class="card-body p-4">' +
+                        '<div class="d-flex align-items-center mb-2">' +
+                        '<div class="review-avatar me-3" style="background:' + colors[i % colors.length] + '">' + initial + '</div>' +
+                        '<div><div class="fw-semibold">' + escapeHtml(r.name) + '</div>' +
+                        '<div class="review-stars small">' + starsHtml(r.rating) + '</div></div>' +
+                        '<div class="ms-auto text-muted small">' + escapeHtml(r.date) + '</div>' +
+                        '</div>' +
+                        '<p class="mb-0">' + escapeHtml(r.message) + '</p>' +
+                        '</div></div>';
+                }).join('');
+            }
+
+            // ---------- Submit ----------
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var valid = true;
+
+                [nameEl, msgEl].forEach(function (el) {
+                    if (!el.value.trim()) {
+                        el.classList.add('is-invalid');
+                        valid = false;
+                    } else {
+                        el.classList.remove('is-invalid');
+                    }
+                });
+                if (Number(ratingEl.value) < 1) {
+                    ratingError.classList.remove('d-none');
+                    valid = false;
+                }
+                if (!valid) return;
+
+                var reviews = loadReviews();
+                reviews.unshift({
+                    name: nameEl.value.trim(),
+                    rating: Number(ratingEl.value),
+                    message: msgEl.value.trim(),
+                    date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
+                });
+                saveReviews(reviews);
+                render();
+
+                form.reset();
+                ratingEl.value = 0;
+                paintStars(0, 'active');
+                successEl.classList.remove('d-none');
+                setTimeout(function () { successEl.classList.add('d-none'); }, 4000);
+            });
+
+            render();
+        })();
+        </script>
+
+<div id="contact" class="container text-center pt-4 pb-5"
+     style="background-color: #F8F1E7;">
+
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+            <h3 class="fw-bold mb-3"
+                style="color: #70452B;">
+                CONTACT Muzakerry
+            </h3>
+
+            <p class="lead" style="color: #795C46;">
+                Freshly baked, made with love.
+                Nikmati berbagai pilihan roti dan pastry
+                lezat dari Muzakkery. Hubungi kami atau kunjungi
+                toko kami untuk mendapatkan roti favoritmu.
+            </p>
+
+        </div>
+    </div>
+
+    <div class="row align-items-start text-start g-5 pt-4 pb-5">
+
+        <!-- Google Maps -->
+        <div class="col-lg-7">
+
+            <iframe
+                src="https://maps.google.com/maps?q=-7.3157136,110.4815608&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                class="rounded-4 shadow-sm"
+                width="100%"
+                height="410"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <div class="mt-3">
+                <a href="https://www.google.com/maps/place/Triad+printing/@-7.3157083,110.4789859,1002m/data=!3m1!1e3!4m6!3m5!1s0x2e7a79000e8ad5af:0xe40448ce35cbf741!8m2!3d-7.3157136!4d110.4815608"
+                   target="_blank"
+                   class="btn rounded-pill px-4"
+                   style="background-color: #8B5E3C; color: white;">
+
+                    <i class="bi bi-geo-alt"></i>
+                    Open Google Maps
+
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Contact Information -->
+        <div class="col-lg-5">
+
+            <div class="card h-100 border-0 rounded-4 shadow-sm"
+                 style="background-color: #FFFDF9;">
+
+                <div class="card-body p-4 pb-0">
+
+                    <!-- Address -->
+                    <div class="d-flex py-2">
+
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-geo-alt fs-3"
+                               style="color: #8B5E3C;"></i>
+                        </div>
+
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="mb-1 fw-bold"
+                                style="color: #70452B;">
+                                Our Location
+                            </h5>
+
+                            <p style="color: #795C46;">
+                                Visit Muzakkery
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <!-- WhatsApp -->
+                    <div class="d-flex py-2">
+
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-whatsapp fs-4"
+                               style="color: #8B5E3C;"></i>
+                        </div>
+
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="mb-1 fw-bold"
+                                style="color: #70452B;">
+                                WhatsApp
+                            </h5>
+
+                            <p style="color: #795C46;">
+                                Contact us for orders
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <!-- Email -->
+                    <div class="d-flex py-2">
+
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-envelope fs-4"
+                               style="color: #8B5E3C;"></i>
+                        </div>
+
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="mb-1 fw-bold"
+                                style="color: #70452B;">
+                                Email
+                            </h5>
+
+                            <p style="color: #795C46;">
+                                muzakkery@gmail.com
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <!-- Working Hours -->
+                    <div class="d-flex py-2">
+
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-clock fs-4"
+                               style="color: #8B5E3C;"></i>
+                        </div>
+
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="mb-1 fw-bold"
+                                style="color: #70452B;">
+                                Opening Hours
+                            </h5>
+
+                            <p style="color: #795C46;">
+                                Monday - Sunday<br>
+                                08.00 AM - 09.00 PM
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-4 bg-white">
@@ -376,6 +1127,5 @@
     <!-- Popper and Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-</body>
 
-</html>
+</body>
