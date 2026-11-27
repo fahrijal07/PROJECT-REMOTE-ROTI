@@ -1149,4 +1149,55 @@
     <!-- Popper and Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const sliderEl = document.getElementById('homeSlider');
+    const cardsWrapper = document.getElementById('heroCardsWrapper');
+    const resetBtn = document.getElementById('resetCardsBtn');
+    const cards = document.querySelectorAll('.hero-card');
+
+    // Inisialisasi Bootstrap Carousel tanpa auto-slide agar dikendalikan penuh oleh 3 kotak
+    const homeCarousel = new bootstrap.Carousel(sliderEl, {
+        interval: false,
+        ride: false
+    });
+
+    function activateSlideFromCard(index) {
+        // 1. Pindah ke slide sesuai kotak yang diklik (0 = kiri, 1 = tengah, 2 = kanan)
+        homeCarousel.to(index);
+
+        // 2. Ubah 3 kotak menjadi mode mini di pojok kanan bawah
+        cardsWrapper.classList.add('docked-bottom-right');
+        sliderEl.classList.add('card-mode-active');
+
+        // 3. Sembunyikan kotak yang sedang aktif, tampilkan 2 kotak lainnya di kanan bawah
+        cards.forEach((card) => {
+            const cardIdx = parseInt(card.getAttribute('data-slide-index'), 10);
+            if (cardIdx === index) {
+                card.classList.add('is-active-slide');
+            } else {
+                card.classList.remove('is-active-slide');
+            }
+        });
+    }
+
+    // Event klik pada masing-masing kotak
+    cards.forEach((card) => {
+        card.addEventListener('click', function () {
+            const targetIndex = parseInt(this.getAttribute('data-slide-index'), 10);
+            activateSlideFromCard(targetIndex);
+        });
+    });
+
+    // Event tombol reset untuk mengembalikan tampilan awal 3 kotak besar
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            cardsWrapper.classList.remove('docked-bottom-right');
+            sliderEl.classList.remove('card-mode-active');
+            cards.forEach((card) => card.classList.remove('is-active-slide'));
+        });
+    }
+});
+</script>
 </body>
